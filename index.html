@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>HTML Template</title>
+	<meta name="viewport" content="width=device-width">
+	<link rel="stylesheet" href="css/normalize/normalize.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+<body>
+	<header>
+
+		<div class="logo_menu" onclick="showMenu()">
+			<img class="logo" src="https://askbootstrap.com/preview/osahan-mobile/images/logo-white.png" alt="">
+			<i class="fa fa-navicon"></i>
+		</div>
+
+		<div class="search_bar">
+			<form action="">
+				<input type="text" name="searchUser" placeholder="Search products & brands">
+			</form>
+			<a href=""><i class="fa fa-search"></i>&nbsp;SEARCH</a>
+		</div>
+
+		<ul class="cart_account">
+
+			<li class="shopping_cart" onclick="cartDropdown()">
+				<i class="fa fa-shopping-cart"></i>&nbsp;CART&nbsp;<i class="fa fa-caret-down"></i>
+				<span class="counter">03</span>
+
+				<ul class="items_cart" id="cart_display" style="display: none;">
+
+					<li>
+						<a href="">
+							<img src="https://askbootstrap.com/preview/osahan-mobile/images/all-products/small/1.jpg" alt="">
+							<div>
+								<h3>Samsung Galaxy S8 </h3><i class="fa fa-trash-o"></i>
+								<span class="remove">Remove <i class="fa fa-caret-down"></i></span>
+								<p class="model_description">Color: red | Model: Grand S2 </p>
+								<p class="price"><span>$529.99</span>&nbsp;$379.99</p>
+							</div>
+						</a>
+					</li>
+
+					<li>
+						<a href="">
+							<img src="https://askbootstrap.com/preview/osahan-mobile/images/all-products/small/3.jpg" alt="">
+							<div>
+								<h3>Samsung Galaxy S8 </h3><i class="fa fa-trash-o"></i>
+								<span class="remove">Remove <i class="fa fa-caret-down"></i></span>
+								<p class="model_description">Color: red | Model: Grand S2 </p>
+								<p class="price"><span>$79.99</span>&nbsp;$49.99</p>
+							</div>
+						</a>
+					</li>
+
+					<li>
+						<a href="">
+							<img src="https://askbootstrap.com/preview/osahan-mobile/images/all-products/small/4.jpg" alt="">
+							<div>
+								<h3>Samsung Galaxy S8 </h3><i class="fa fa-trash-o"></i>
+								<span class="remove">Remove <i class="fa fa-caret-down"></i></span>
+								<p class="model_description">Color: red | Model: Grand S2 </p>
+								<p class="price"><span>$129.99</span>&nbsp;$99.99</p>
+							</div>
+						</a>
+					</li>
+
+					<li class="final_cart">
+						<h2>Subtotal: $210</h2>
+						<div>
+							<a href="" id="shop-cart"><i class="fa fa-shopping-cart"></i>&nbsp;VIEW CART</a>
+							<a href="" id="checkout">CHECKOUT</a>
+						</div>
+					</li>
+
+				</ul>
+
+			</li>
+
+			<li class="account" onclick="myAccount()">
+				<img src="https://askbootstrap.com/preview/osahan-mobile/images/user-ava.jpg" alt="">
+				<span>
+					<strong>HI</strong>&nbsp;OSAHAN&nbsp;<i class="fa fa-caret-down"></i>
+				</span>
+				
+				<ul class="account_menu" id="account_display" style="display: none;">
+
+					<li>
+						<a href=""><i class="fa fa-user"></i>&nbsp;&nbsp;&nbsp;My Profile</a>
+					</li>
+
+					<li>
+						<a href=""><i class="material-icons">place</i>&nbsp;&nbsp;&nbsp;My Address</a>
+					</li>
+
+					<li>
+						<a href=""><i class="fa fa-heart"></i>&nbsp;&nbsp;&nbsp;Wish List&nbsp;<span class="normal_tag" id="wish_tag">6</span></a>
+					</li>
+
+					<li>
+						<a href=""><i class="fa fa-list-alt"></i>&nbsp;&nbsp;&nbsp;Order List</a>
+					</li>
+
+					<li>
+						<a href=""><i class="fa fa-truck"></i>&nbsp;&nbsp;&nbsp;Order Status</a>
+					</li>
+
+					<li>
+						<a href=""><i class="fa fa-newspaper-o"></i>&nbsp;&nbsp;&nbsp;Invoice A4</a>
+					</li>
+
+					<li id="sign_out">
+						<a href=""><i class="fa fa-sign-out"></i>&nbsp;&nbsp;&nbsp;Logout</a>
+					</li>
+
+				</ul>
+
+			</li>
+
+		</ul>
+
+	</header>
+
+	<nav>
+		
+		<ul class="main_menu" id="showMenu" style="display: none;">
+
+			<li>
+				<a class="menu_link" onclick="showHome()"><i class="fa fa-home"></i>&nbsp;HOME&nbsp;&nbsp;<i class="fa fa-caret-down"></i></a>
+				<ul class="home_images" id="showHome" style="display: none;">
+					<li><a href=""><img src="https://askbootstrap.com/preview/osahan-mobile/images/index1.jpg" alt=""></a></li>
+					<li><a href=""><img src="https://askbootstrap.com/preview/osahan-mobile/images/index2.jpg" alt=""></a></li>
+					<li><a href=""><img src="https://askbootstrap.com/preview/osahan-mobile/images/index3.jpg" alt=""></a></li>
+					<li><a href=""><img src="https://askbootstrap.com/preview/osahan-mobile/images/index4.jpg" alt=""></a></li>
+				</ul>
+
+			</li>
+
+			<li>
+				<a class="menu_link" onclick="showProducts()">PRODUCTS&nbsp;&nbsp;<i class="fa fa-caret-down"></i></a>
+
+				<div class="product_submenu" id="showProducts" style="display: none;">
+
+					<h2 class="product_title"><a href="">ALL MOBILE PHONES <span class="normal_tag purple_tag">NEW</span></a></h2>
+					<ul class="product_list">
+						<li><a href=""><span class="indenter"></span><i class="fa fa-angle-right"></i>&nbsp;&nbsp;Brand Name</a></li>
+						<li><a href=""><span class="indenter"></span><i class="fa fa-angle-right"></i>&nbsp;&nbsp;Brand Name</a></li>
+						<li><a href=""><span class="indenter"></span><i class="fa fa-angle-right"></i>&nbsp;&nbsp;Brand Name&nbsp;<span class="normal_tag gray_tag">20%</span></a></li>
+						<li><a href=""><span class="indenter"></span><i class="fa fa-angle-right"></i>&nbsp;&nbsp;Brand Name</a></li>
+					</ul>
+					<h2 class="product_title"><a href="">SMART PHONES</a></h2>
+					<ul class="product_list">
+						<li><a href=""><span class="indenter"></span><i class="fa fa-angle-right"></i>&nbsp;&nbsp;Brand Name</a></li>
+						<li><a href=""><span class="indenter"></span><i class="fa fa-angle-right"></i>&nbsp;&nbsp;Brand Name</a></li>
+						<li><a href=""><span class="indenter"></span><i class="fa fa-angle-right"></i>&nbsp;&nbsp;Brand Name</a></li>
+						<li><a href=""><span class="indenter"></span><i class="fa fa-angle-right"></i>&nbsp;&nbsp;Brand Name</a></li>
+					</ul>
+					<h2 class="product_title"><a href="">ANDROID PHONES</a></h2>
+					<ul class="product_list">
+						<li><a href=""><span class="indenter"></span><i class="fa fa-angle-right"></i>&nbsp;&nbsp;Brand Name</a></li>
+						<li><a href=""><span class="indenter"></span><i class="fa fa-angle-right"></i>&nbsp;&nbsp;Brand Name</a></li>
+						<li><a href=""><span class="indenter"></span><i class="fa fa-angle-right"></i>&nbsp;&nbsp;Brand Name</a></li>
+						<li><a href=""><span class="indenter"></span><i class="fa fa-angle-right"></i>&nbsp;&nbsp;Brand Name</a></li>
+					</ul>
+					<h2 class="product_title"><a href="">WINDOWS MOBILES</a></h2>
+					<ul class="product_list">
+						<li><a href=""><span class="indenter"></span><i class="fa fa-angle-right"></i>&nbsp;&nbsp;Brand Name</a></li>
+						<li><a href=""><span class="indenter"></span><i class="fa fa-angle-right"></i>&nbsp;&nbsp;Brand Name</a></li>
+						<li><a href=""><span class="indenter"></span><i class="fa fa-angle-right"></i>&nbsp;&nbsp;Brand Name</a></li>
+						<li><a href=""><span class="indenter"></span><i class="fa fa-angle-right"></i>&nbsp;&nbsp;Brand Name</a></li>
+					</ul>
+					<h2 class="product_title"><a href="">REFURBISHED MOBILES&nbsp;<span class="normal_tag red_tag">50% OFF</span></a></h2>
+					<ul class="product_list">
+						<li><a href=""><span class="indenter"></span><i class="fa fa-angle-right"></i>&nbsp;&nbsp;Brand Name</a></li>
+						<li><a href=""><span class="indenter"></span><i class="fa fa-angle-right"></i>&nbsp;&nbsp;Brand Name</a></li>
+						<li><a href=""><span class="indenter"></span><i class="fa fa-angle-right"></i>&nbsp;&nbsp;Brand Name</a></li>
+						<li><a href=""><span class="indenter"></span><i class="fa fa-angle-right"></i>&nbsp;&nbsp;Brand Name</a></li>
+					</ul>
+					<h2 class="product_title"><a href="">ALL MOBILES ACCESSORIES&nbsp;<span class="normal_tag yellow_tag">60% OFF</span></a></h2>
+					<ul class="product_list">
+						<li><a href=""><span class="indenter"></span><i class="fa fa-angle-right"></i>&nbsp;&nbsp;Brand Name</a></li>
+						<li><a href=""><span class="indenter"></span><i class="fa fa-angle-right"></i>&nbsp;&nbsp;Brand Name</a></li>
+						<li><a href=""><span class="indenter"></span><i class="fa fa-angle-right"></i>&nbsp;&nbsp;Brand Name</a></li>
+						<li><a href=""><span class="indenter"></span><i class="fa fa-angle-right"></i>&nbsp;&nbsp;Brand Name</a></li>
+					</ul>
+
+				</div>
+
+			</li>
+
+			<li>
+				<a class="menu_link" onclick="showBrands()">BRANDS&nbsp;&nbsp;<i class="fa fa-caret-down"></i></a>
+
+				<div class="brands_submenu" id="showBrands" style="display: none;">
+
+					<h2 class="brands_title"><a href="/">SMART PHONES BRANDS <span class="normal_tag aqua_tag">10% OFF</span></a></h2>
+					<ul class="brands_list">
+						<li><a href=""><span class="indenter"></span><img class="img_brand" src="https://askbootstrap.com/preview/osahan-mobile/images/brands/1.png" alt="">&nbsp;&nbsp;<p>Brand Name</p></a></li>
+						<li><a href=""><span class="indenter"></span><img class="img_brand" src="https://askbootstrap.com/preview/osahan-mobile/images/brands/2.png" alt="">&nbsp;&nbsp;<p>Brand Name</p></a></li>
+						<li><a href=""><span class="indenter"></span><img class="img_brand" src="https://askbootstrap.com/preview/osahan-mobile/images/brands/3.png" alt="">&nbsp;&nbsp;<p>Brand Name</p></a></li>
+						<li><a href=""><span class="indenter"></span><img class="img_brand" src="https://askbootstrap.com/preview/osahan-mobile/images/brands/4.png" alt="">&nbsp;&nbsp;<p>Brand Name</p></a></li>
+					</ul>
+
+					<h2 class="brands_title"><a href="">ANDROID MOBILES BRAND&nbsp;<span class="normal_tag red_tag">HOT</span></a></h2>
+					<ul class="brands_list">
+						<li><a href=""><span class="indenter"></span><img class="img_brand" src="https://askbootstrap.com/preview/osahan-mobile/images/brands/1.png" alt="">&nbsp;&nbsp;<p>Brand Name</p></a></li>
+						<li><a href=""><span class="indenter"></span><img class="img_brand" src="https://askbootstrap.com/preview/osahan-mobile/images/brands/3.png" alt="">&nbsp;&nbsp;<p>Brand Name</p></a></li>
+						<li><a href=""><span class="indenter"></span><img class="img_brand" src="https://askbootstrap.com/preview/osahan-mobile/images/brands/5.png" alt="">&nbsp;&nbsp;<p>Brand Name</p></a></li>
+						<li><a href=""><span class="indenter"></span><img class="img_brand" src="https://askbootstrap.com/preview/osahan-mobile/images/brands/2.png" alt="">&nbsp;&nbsp;<p>Brand Name</p></a></li>
+					</ul>
+
+					<h2 class="brands_title"><a href="">WINDOWS MOBILES BRAND</a></h2>
+					<ul class="brands_list">
+						<li><a href=""><span class="indenter"></span><img class="img_brand" src="https://askbootstrap.com/preview/osahan-mobile/images/brands/1.png" alt="">&nbsp;&nbsp;<p>Brand Name</p></a></li>
+						<li><a href=""><span class="indenter"></span><img class="img_brand" src="https://askbootstrap.com/preview/osahan-mobile/images/brands/1.png" alt="">&nbsp;&nbsp;<p>Brand Name</p>&nbsp;<span class="normal_tag yellow_tag">NEW</span></a></li>
+						<li><a href=""><span class="indenter"></span><img class="img_brand" src="https://askbootstrap.com/preview/osahan-mobile/images/brands/1.png" alt="">&nbsp;&nbsp;<p>Brand Name</p></a></li>
+						<li><a href=""><span class="indenter"></span><img class="img_brand" src="https://askbootstrap.com/preview/osahan-mobile/images/brands/1.png" alt="">&nbsp;&nbsp;<p>Brand Name</p></a></li>
+					</ul>
+
+				</div>
+
+			</li>
+
+			<li>
+				<a class="menu_link" onclick="showPages()">PAGES&nbsp;&nbsp;<i class="fa fa-caret-down"></i></a>
+
+				<div class="pages_submenu" id="showPages" style="display: none;">
+
+					<h2 class="pages_title"><a href="">SHOP PAGES</a></h2>
+					<ul class="pages_list">
+						<li><a href=""><span class="indenter"></span><i class="fa fa-angle-right"></i>&nbsp;&nbsp;Shop Grid Full Width</a></li>
+						<li><a href=""><span class="indenter"></span><i class="fa fa-angle-right"></i>&nbsp;&nbsp;Shop Grid Right Sidebar</a></li>
+						<li><a href=""><span class="indenter"></span><i class="fa fa-angle-right"></i>&nbsp;&nbsp;Shop Grid Left Sidebar</a></li>
+						<li><a href=""><span class="indenter"></span><i class="fa fa-angle-right"></i>&nbsp;&nbsp;Shop List Full Width</a></li>
+						<li><a href=""><span class="indenter"></span><i class="fa fa-angle-right"></i>&nbsp;&nbsp;Shop List Right Sidebar</a></li>
+						<li><a href=""><span class="indenter"></span><i class="fa fa-angle-right"></i>&nbsp;&nbsp;Shop List Left Sidebar</a></li>
+					</ul>
+					<h2 class="pages_title"><a href="">PRODUCT PAGES</a></h2>
+					<ul class="pages_list">
+						<li><a href=""><span class="indenter"></span><i class="fa fa-angle-right"></i>&nbsp;&nbsp;Category Page</a></li>
+						<li><a href=""><span class="indenter"></span><i class="fa fa-angle-right"></i>&nbsp;&nbsp;Shop Detail</a></li>
+						<li><a href=""><span class="indenter"></span><i class="fa fa-angle-right"></i>&nbsp;&nbsp;Wishlists</a></li>
+						<li><a href=""><span class="indenter"></span><i class="fa fa-angle-right"></i>&nbsp;&nbsp;My Wishlist</a></li>
+						<li><a href=""><span class="indenter"></span><i class="fa fa-angle-right"></i>&nbsp;&nbsp;Compare</a></li>
+						<li><a href=""><span class="indenter"></span><i class="fa fa-angle-right"></i>&nbsp;&nbsp;Quickview</a></li>
+					</ul>
+					<h2 class="pages_title"><a href="">CART PAGES</a></h2>
+					<ul class="pages_list">
+						<li><a href=""><span class="indenter"></span><i class="fa fa-angle-right"></i>&nbsp;&nbsp;Cart</a></li>
+						<li><a href=""><span class="indenter"></span><i class="fa fa-angle-right"></i>&nbsp;&nbsp;Cart Order</a></li>
+						<li><a href=""><span class="indenter"></span><i class="fa fa-angle-right"></i>&nbsp;&nbsp;Cart Checkout</a></li>
+						<li><a href=""><span class="indenter"></span><i class="fa fa-angle-right"></i>&nbsp;&nbsp;Cart Delivery</a></li>
+						<li><a href=""><span class="indenter"></span><i class="fa fa-angle-right"></i>&nbsp;&nbsp;Thanks for Order</a></li>
+						<li><a href=""><span class="indenter"></span><i class="fa fa-angle-right"></i>&nbsp;&nbsp;Shopping Cart Tabs</a></li>
+					</ul>
+					<h2 class="pages_title"><a href="">ACCOUNT PAGES</a></h2>
+					<ul class="pages_list">
+						<li><a href=""><span class="indenter"></span><i class="fa fa-angle-right"></i>&nbsp;&nbsp;My Profile</a></li>
+						<li><a href=""><span class="indenter"></span><i class="fa fa-angle-right"></i>&nbsp;&nbsp;My Address</a></li>
+						<li><a href=""><span class="indenter"></span><i class="fa fa-angle-right"></i>&nbsp;&nbsp;Order List</a></li>
+						<li><a href=""><span class="indenter"></span><i class="fa fa-angle-right"></i>&nbsp;&nbsp;Order Status</a></li>
+						<li><a href=""><span class="indenter"></span><i class="fa fa-angle-right"></i>&nbsp;&nbsp;Invoice A4</a></li>
+						<li><a href=""><span class="indenter"></span><i class="fa fa-angle-right"></i>&nbsp;&nbsp;About Us</a></li>
+					</ul>
+					<h2 class="pages_title"><a href="">STATIC PAGES</a></h2>
+					<ul class="pages_list">
+						<li><a href=""><span class="indenter"></span><i class="fa fa-angle-right"></i>&nbsp;&nbsp;FAQ</a></li>
+						<li><a href=""><span class="indenter"></span><i class="fa fa-angle-right"></i>&nbsp;&nbsp;Login</a></li>
+						<li><a href=""><span class="indenter"></span><i class="fa fa-angle-right"></i>&nbsp;&nbsp;Register</a></li>
+						<li><a href=""><span class="indenter"></span><i class="fa fa-angle-right"></i>&nbsp;&nbsp;Login Modal</a></li>
+						<li><a href=""><span class="indenter"></span><i class="fa fa-angle-right"></i>&nbsp;&nbsp;Terms and Conditions</a></li>
+						<li><a href=""><span class="indenter"></span><i class="fa fa-angle-right"></i>&nbsp;&nbsp;Privacy Policy</a></li>
+					</ul>
+					<h2 class="pages_title"><a href="">OTHER PAGES</a></h2>
+					<ul class="pages_list">
+						<li><a href=""><span class="indenter"></span><i class="fa fa-angle-right"></i>&nbsp;&nbsp;Blog - Right Sidebar</a></li>
+						<li><a href=""><span class="indenter"></span><i class="fa fa-angle-right"></i>&nbsp;&nbsp;Blog - Left Sidebar</a></li>
+						<li><a href=""><span class="indenter"></span><i class="fa fa-angle-right"></i>&nbsp;&nbsp;Blog - Full Width</a></li>
+						<li><a href=""><span class="indenter"></span><i class="fa fa-angle-right"></i>&nbsp;&nbsp;Single Post</a></li>
+						<li><a href=""><span class="indenter"></span><i class="fa fa-angle-right"></i>&nbsp;&nbsp;Email Template</a></li>
+						<li><a href=""><span class="indenter"></span><i class="fa fa-angle-right"></i>&nbsp;&nbsp;Error 404</a></li>
+					</ul>
+
+				</div>
+
+			</li>
+
+			<li>
+				<a class="menu_link" onclick="showComponents()">COMPONENTS&nbsp;&nbsp;<i class="fa fa-caret-down"></i></a>
+
+				<div class="components_submenu" id="showComponents" style="display: none;">
+
+					<h2 class="components_title"><a href="">A - C</a></h2>
+					<ul class="components_list">
+						<li><a href=""><span class="indenter"></span><i class="fa fa-warning"></i>&nbsp;&nbsp;Alerts</a></li>
+						<li><a href=""><span class="indenter"></span><i class="fa fa-newspaper-o"></i>&nbsp;&nbsp;Badge</a></li>
+						<li><a href=""><span class="indenter"></span><i class="fa fa-text-width"></i>&nbsp;&nbsp;Breadcrumb</a></li>
+						<li><a href=""><span class="indenter"></span><i class="fa fa-connectdevelop"></i>&nbsp;&nbsp;Button Group</a></li>
+						<li><a href=""><span class="indenter"></span><i class="fa fa-chain"></i>&nbsp;&nbsp;Buttons</a></li>
+						<li><a href=""><span class="indenter"></span><i class="fa fa-credit-card"></i>&nbsp;&nbsp;Card</a></li>
+						<li><a href=""><span class="indenter"></span><i class="fa fa-image"></i>&nbsp;&nbsp;Carousel</a></li>
+					</ul>
+					<h2 class="components_title"><a href="">D - I</a></h2>
+					<ul class="components_list">
+						<li><a href=""><span class="indenter"></span><i class="fa fa-warning"></i>&nbsp;&nbsp;Collapse</a></li>
+						<li><a href=""><span class="indenter"></span><i class="fa fa-newspaper-o"></i>&nbsp;&nbsp;Dropdowns</a></li>
+						<li><a href=""><span class="indenter"></span><i class="fa fa-text-width"></i>&nbsp;&nbsp;Figures</a></li>
+						<li><a href=""><span class="indenter"></span><i class="fa fa-connectdevelop"></i>&nbsp;&nbsp;Forms</a></li>
+						<li><a href=""><span class="indenter"></span><i class="fa fa-chain"></i>&nbsp;&nbsp;Grid System</a></li>
+						<li><a href=""><span class="indenter"></span><i class="fa fa-credit-card"></i>&nbsp;&nbsp;Images</a></li>
+						<li><a href=""><span class="indenter"></span><i class="fa fa-image"></i>&nbsp;&nbsp;Input Group</a></li>
+					</ul>
+					<h2 class="components_title"><a href="">J - P</a></h2>
+					<ul class="components_list">
+						<li><a href=""><span class="indenter"></span><i class="fa fa-warning"></i>&nbsp;&nbsp;Jumbotron</a></li>
+						<li><a href=""><span class="indenter"></span><i class="fa fa-newspaper-o"></i>&nbsp;&nbsp;List Group</a></li>
+						<li><a href=""><span class="indenter"></span><i class="fa fa-text-width"></i>&nbsp;&nbsp;Media Object</a></li>
+						<li><a href=""><span class="indenter"></span><i class="fa fa-connectdevelop"></i>&nbsp;&nbsp;Modal</a></li>
+						<li><a href=""><span class="indenter"></span><i class="fa fa-chain"></i>&nbsp;&nbsp;Nav</a></li>
+						<li><a href=""><span class="indenter"></span><i class="fa fa-credit-card"></i>&nbsp;&nbsp;Navbar</a></li>
+						<li><a href=""><span class="indenter"></span><i class="fa fa-image"></i>&nbsp;&nbsp;Pagination</a></li>
+					</ul>
+					<h2 class="components_title"><a href="">P - T</a></h2>
+					<ul class="components_list">
+						<li><a href=""><span class="indenter"></span><i class="fa fa-warning"></i>&nbsp;&nbsp;Popovers</a></li>
+						<li><a href=""><span class="indenter"></span><i class="fa fa-newspaper-o"></i>&nbsp;&nbsp;Progress</a></li>
+						<li><a href=""><span class="indenter"></span><i class="fa fa-text-width"></i>&nbsp;&nbsp;Page Blank</a></li>
+						<li><a href=""><span class="indenter"></span><i class="fa fa-connectdevelop"></i>&nbsp;&nbsp;Scrollspy</a></li>
+						<li><a href=""><span class="indenter"></span><i class="fa fa-chain"></i>&nbsp;&nbsp;Tables</a></li>
+						<li><a href=""><span class="indenter"></span><i class="fa fa-credit-card"></i>&nbsp;&nbsp;Tooltips</a></li>
+						<li><a href=""><span class="indenter"></span><i class="fa fa-image"></i>&nbsp;&nbsp;Typography</a></li>
+					</ul>
+
+				</div>
+
+			</li>
+
+			<li>
+				<a class="menu_link" onclick="showBlog()">BLOG&nbsp;&nbsp;<i class="fa fa-caret-down"></i></a>
+					<ul class="blog_list" id="showBlog" style="display: none;">
+						<li><a href=""><span class="indenter"></span><i class="fa fa-angle-right"></i>&nbsp;&nbsp;Blog - Right Sidebar</a></li>
+						<li><a href=""><span class="indenter"></span><i class="fa fa-angle-right"></i>&nbsp;&nbsp;Blog - Left Sidebar</a></li>
+						<li><a href=""><span class="indenter"></span><i class="fa fa-angle-right"></i>&nbsp;&nbsp;Blog - FullWidth</a></li>
+						<li><a href=""><span class="indenter"></span><i class="fa fa-angle-right"></i>&nbsp;&nbsp;Single Post</a></li>
+					</ul>
+
+				</div>
+			</li>
+
+			<li>
+				<a class="menu_link" href="">CONTACT</a>
+			</li>
+
+		</ul>
+
+	</nav>
+
+	<div class="banner_carousel">
+		
+		<img src="https://askbootstrap.com/preview/osahan-mobile/images/slider/slider1.jpg" alt="">
+		<div class="previous">PREV</div>
+		<div class="next">NEXT</div>
+
+	</div>
+
+	<div class="featured_section">
+		
+		<div class="featured_header">
+
+			<h1>FEATURED ITEMS</h1>
+			<div class="border_decorative"></div>
+
+		</div>
+			
+		<div class="featured_item1"">
+
+			<div class="container_item">
+
+				<div class="image_container">
+					<img id="product_image" src="https://askbootstrap.com/preview/osahan-mobile/images/all-products/small/1.jpg" alt="">
+				</div>
+
+				<div class="footer_container_unclicked">
+					<h2 class="featured_title">Lorem ipsum dolor.</h2>
+					<div class="product_price">
+						<span class="prev_price">$299.99&nbsp;</span>
+						<span class="actual_price">$229.99</span>
+					</div>
+					<span class="review">
+						<i class="fa fa-star"></i>
+						<i class="fa fa-star"></i>
+						<i class="fa fa-star"></i>
+						<i class="fa fa-star"></i>
+						<i class="fa fa-star"></i>
+						(613)
+					</span>
+				</div>
+
+				<div class="footer_container_clicked">
+					<div class="icons_clicked">
+						<i class="fa fa-shopping-cart"></i>
+						<i class="fa fa-search"></i>
+					</div>
+					<span class="sizing"><span class="bold_string">Size</span>&nbsp;&nbsp;ONE SIZE</span>
+				</div>
+
+				<div class="previous feat_prev">PREV</div>
+				<div class="next feat_next">NEXT</div>
+				<i class="fa fa-heart"></i>
+				<span class="normal_tag red_tag">HOT</span>
+
+			</div>
+
+		</div>
+
+	</div>
+
+	<div class="grid_container">
+
+		<div class="sub_container1">
+			
+			<div class="wrap1">
+
+				<div class="item1">
+					<img src="https://askbootstrap.com/preview/osahan-mobile/images/offers-list/1.jpg" alt="">
+					<div class="pfoot">
+						<h2>PRODUCT NAME</h2>
+						<i class="fa fa-shopping-cart"></i>
+					</div>
+				</div>
+
+			</div>
+
+			<div class="wrap2">
+
+				<div class="subwrap1">
+
+					<div class="item2">
+						<div>
+							<img src="https://askbootstrap.com/preview/osahan-mobile/images/offers-list/2.jpg" alt="">
+							<div class="pfoot">
+								<h2>PRODUCT NAME</h2>
+								<i class="fa fa-shopping-cart"></i>
+							</div>
+						</div>
+					</div>
+
+					<div class="item3">
+						<img src="https://askbootstrap.com/preview/osahan-mobile/images/offers-list/3.jpg" alt="">
+						<div class="pfoot">
+							<h2>PRODUCT NAME</h2>
+							<i class="fa fa-shopping-cart"></i>
+						</div>
+					</div>
+
+				</div>
+
+				<div class="subwrap2">
+
+					<div class="item4">
+						<img src="https://askbootstrap.com/preview/osahan-mobile/images/offers-list/4.jpg" alt="">
+						<div class="pfoot">
+							<h2>PRODUCT NAME</h2>
+							<i class="fa fa-shopping-cart"></i>
+						</div>
+					</div>
+			
+					<div class="item5">
+						<img src="https://askbootstrap.com/preview/osahan-mobile/images/offers-list/5.jpg" alt="">
+						<div class="pfoot">
+							<h2>PRODUCT NAME</h2>
+							<i class="fa fa-shopping-cart"></i>
+						</div>
+					</div>
+			
+					<div class="item6">
+						<img src="https://askbootstrap.com/preview/osahan-mobile/images/offers-list/6.jpg" alt="">
+						<div class="pfoot">
+							<h2>PRODUCT NAME</h2>
+							<i class="fa fa-shopping-cart"></i>
+						</div>
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+
+		<div class="sub_container2">
+
+			<div class="item7">
+				<img src="https://askbootstrap.com/preview/osahan-mobile/images/offers-list/7.jpg" alt="">
+				<div class="pfoot">
+					<h2>PRODUCT NAME</h2>
+					<i class="fa fa-shopping-cart"></i>
+				</div>
+			</div>
+
+			<div class="item8">
+				<img src="https://askbootstrap.com/preview/osahan-mobile/images/offers-list/8.jpg" alt="">
+				<div class="pfoot">
+					<h2>PRODUCT NAME</h2>
+					<i class="fa fa-shopping-cart"></i>
+				</div>
+			</div>
+
+			<div class="item9">
+				<img src="https://askbootstrap.com/preview/osahan-mobile/images/offers-list/9.jpg" alt="">
+				<div class="pfoot">
+					<h2>PRODUCT NAME</h2>
+					<i class="fa fa-shopping-cart"></i>
+				</div>
+			</div>
+
+		</div>
+
+	</div>
+
+	<script src="javascript/script.js"></script>
+
+</body>
+</html>
