@@ -714,75 +714,79 @@ header .logo_menu .fa-navicon:hover { outline: 5px solid rgba(0, 0, 0, 0.3); }
 .next { right: 10px; top:45%; }
 
 /* ==============================
-5. FEATURED SECTION
+5. SECTIONS / ITEMS STYLING
 ===============================*/
 
 /* ==== 5.1 GENERAL STYLING ==== */
 
-.featured_section {
+[class*="section"] {
 
-	background: rgb(74, 62, 237);
+	background: white;
 	padding: 25px 15px 40px;
 
 }
 
 /* ==== 5.2 HEADER STYLING ==== */
 
-.featured_section .featured_header {
+[class*="section"] [class*=header] {
 
 	position: relative;
 
 }
 
-.featured_section .featured_header h1 {
+[class*="section"] [class*=header] h1 {
 
-	color: white;
+	color: #343a40;
 	font-size: 1rem;
 	margin-bottom: 40px;
 
 }
 
-.featured_section .featured_header .border_decorative {
+[class*="section"] [class*=header] .border_decorative {
 
 	height: 3px;
 	width: 40px;
 	background: linear-gradient(to right, #4a3eed 0%, #9d1fff 100%);
 	position: absolute;
-	top: 30px;
 
 }
 
+#featured_pos,
+#onsale_pos { top: 30px; }
+
 /* ==== 5.3 FEATURED ITEM ==== */
 
-.featured_section [class*="featured_item"] .container_item {
+[class*="section"] [class*="item"] .container_box {
 
 	width: 100%;
 
 }
 
-.featured_section [class*="featured_item"] {
+[class*="section"] [class*="item"] {
 
 	height: 400px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	background: white;
 	padding: 10px;
 	border-radius: 10px;
 	position: relative;
+	background: rgba(0, 0, 0, 0.01);
+	border: 1px solid rgba(0, 0, 0, 0.2);
 	
 }
 
-.featured_item1 .image_container {
+[class*="item"] .image_container {
 
 	width: 100%;
 	border: 1px solid rgba(0, 0, 0, 0.2);
 	border-radius: 10px;
+	background: white;
 	transition: transform ease 0.25s, border ease 0.25s;
 
 }
 
-.featured_item1 .image_container img {
+[class*="item"] .image_container img {
 
 	height: 280px;
 	margin: 0 auto;
@@ -790,7 +794,7 @@ header .logo_menu .fa-navicon:hover { outline: 5px solid rgba(0, 0, 0, 0.3); }
 
 }
 
-.featured_item1 .container_item .normal_tag {
+[class*="item"] .container_box .normal_tag {
 
 	position: absolute;
 	left: 7px;
@@ -798,7 +802,7 @@ header .logo_menu .fa-navicon:hover { outline: 5px solid rgba(0, 0, 0, 0.3); }
 
 }
 
-.featured_item1 .container_item .fa-heart {
+[class*="item"] .container_box .fa-heart {
 
 	position: absolute;
 	top: 22px;
@@ -807,12 +811,12 @@ header .logo_menu .fa-navicon:hover { outline: 5px solid rgba(0, 0, 0, 0.3); }
 
 }
 
-.featured_item1 .container_item .feat_prev { left: 17px; }
-.featured_item1 .container_item .feat_next { right: 17px; }
+[class*="item"] .container_box .feat_prev { left: 17px; }
+[class*="item"] .container_box .feat_next { right: 17px; }
 
 /* ==== 5.3.1 FOOTER UNCLICKED ==== */
 
-.featured_item1 .footer_container_unclicked {
+[class*="item"] .footer_container_unclicked {
 
 	display: flex;
 	flex-direction: column;
@@ -820,34 +824,35 @@ header .logo_menu .fa-navicon:hover { outline: 5px solid rgba(0, 0, 0, 0.3); }
 
 }
 
-.featured_item1 .featured_title {
+[class*="item"] [class*=title] {
 
 	color: rgb(74, 62, 237);
 	margin: 10px 0;
-	font-size: 1rem;
+	font-size: 0.9rem;
+	font-weight: bold;
 
 }
 
-.featured_item1 .product_price {
+[class*="item"] .product_price {
 
 	margin-bottom: 20px;
 
 }
 
-.featured_item1 .product_price .prev_price {
+[class*="item"] .product_price .prev_price {
 
 	color: rgb(204, 204, 204);
 	text-decoration: line-through;
 
 }
 
-.featured_item1 .product_price .actual_price{
+[class*="item"] .product_price .actual_price {
 
 	color: rgb(126, 126, 126);
 
 }
 
-.featured_item1 .review .fa-star {
+[class*="item"] .review .fa-star {
 
 	color: rgb(255, 195, 21);
 
@@ -855,7 +860,7 @@ header .logo_menu .fa-navicon:hover { outline: 5px solid rgba(0, 0, 0, 0.3); }
 
 /* ==== 5.3.2 FOOTER CLICKED ==== */
 
-.featured_item1 .footer_container_clicked {
+[class*="item"] .footer_container_clicked {
 
 	margin: 15px;
 	display: none;
@@ -864,7 +869,7 @@ header .logo_menu .fa-navicon:hover { outline: 5px solid rgba(0, 0, 0, 0.3); }
 
 }
 
-.featured_item1 .footer_container_clicked .fa {
+[class*="item"] .footer_container_clicked .fa {
 
 	color: white;
 	background: linear-gradient(to right, #4a3eed 0%, #9d1fff 100%);
@@ -875,18 +880,55 @@ header .logo_menu .fa-navicon:hover { outline: 5px solid rgba(0, 0, 0, 0.3); }
 
 }
 
-.featured_item1 .footer_container_clicked .sizing {
+[class*="item"] .footer_container_clicked .sizing {
 
 	margin: 15px;
 
 }
 
-.featured_section [class*="featured_item"]:hover .footer_container_unclicked { display: none; }
-.featured_section [class*="featured_item"]:hover .footer_container_clicked { display: flex; }
-.featured_section [class*="featured_item"]:hover .image_container {
+[class*="section"] [class*="item"]:hover { 
+
+	background: white;
+	box-shadow: 0 0 5px 3px rgba(0, 0, 0, 0.1);
+
+}
+[class*="section"] [class*="item"]:hover .footer_container_unclicked { display: none; }
+[class*="section"] [class*="item"]:hover .footer_container_clicked{ display: flex; }
+[class*="section"] [class*="item"]:hover .image_container {
 
 	transform: scale(1.07);
 	border: 1px solid transparent;
+
+}
+
+/* ==== 5.4 FIXES ==== */
+
+/* ==== 5.4.1 Featured Fixes ==== */
+
+.featured_section {
+
+	background: rgb(74, 62, 237);
+
+}
+
+.featured_section .featured_header h1 {
+
+	color: white;
+
+}
+
+.featured_section [class*="item"] {
+
+	background: white;
+	border: none;
+
+}
+
+/* ==== 5.4.2 Hot Fixes ==== */
+
+.hot_section [class*="hot_item"] {
+
+	margin-bottom: 15px;
 
 }
 
@@ -951,6 +993,153 @@ header .logo_menu .fa-navicon:hover { outline: 5px solid rgba(0, 0, 0, 0.3); }
 .grid_container div[class*="item"]:hover img { 
 
 	transform: scale(1.05);
+
+}
+
+/* ==============================
+7. BANNERS
+===============================*/
+
+/* ==== 7.1 GENERAL STYLING ==== */
+
+[class*="banner_main"] {
+
+	position: relative;
+	z-index: 20;
+
+}
+
+[class*="banner_main"] .banner_container {
+
+	padding: 0px 10px;
+	background: #efefef;
+
+}
+
+[class*="banner_main"] .banner_container .banner {
+
+	width: 100%;
+
+}
+
+/* ==== 7.1 SECOND BANNER FIX ==== */
+
+.banner_main_second .banner_container {
+
+	background: initial;
+
+}
+
+/* ==============================
+8. TOP BRANDS STYLING
+===============================*/
+
+.top_brands_section {
+
+	background: rgba(0, 0, 0, 0.06);
+	display: flex;
+	flex-direction: column;
+	padding-bottom: 30px;
+}
+
+.top_brands_section .brands_header h1 {
+
+	display: flex;
+	align-items: center;
+
+}
+
+#brands_icon {
+
+	font-size: 0.85rem;
+	padding: 3px !important;
+	display: inline-block;
+}
+
+.top_brands_section .brand_image_container {
+
+	align-self: center;
+	background: white;
+	border-radius: 50% 50%;
+	display: flex;
+	padding: 14px 10px;
+	overflow: hidden;
+
+}
+
+.top_brands_section .brand_image_container img {
+
+	justify-content: center;
+	align-items: center;
+
+}
+
+/* ==============================
+9. BRANDS FOOTER STYLING
+===============================*/
+
+/* ==== 9.1 GENERAL STYLING ==== */
+
+.main_footer {
+
+	background: linear-gradient(to right, #4a3eed 0%, #9d1fff 100%);
+	border-top: 1px solid blue;
+	padding: 5px 0;
+
+}
+
+[class*="footer_section"] { 
+
+	background: initial; 
+	margin: 25px 15px;
+	padding: 0;
+
+}
+
+[class*="footer_section"] [class*=header] h1 {
+
+	color: white;
+	margin-bottom: 20px;
+
+}
+
+[class*="footer_section"] [class*=brands] {
+
+	display: flex;
+	flex-wrap: wrap;
+
+}
+
+[class*="footer_section"] [class*=brands] p {
+
+	flex: 50%;
+	color: white;
+	padding: 8px;
+
+}
+
+[class*="footer_section"] [class*=brands] p span {
+
+	font-weight: bold;
+
+}
+
+/* ==== 9.2 ABOUT STYLING ==== */
+
+.about_footer_section .about_text {
+
+	color: white;
+	line-height: 30px;
+
+}
+
+/* ==============================
+10. SERVICE FOOTER STYLING
+===============================*/
+
+.service_container {
+
+	display: flex;
 
 }
 
