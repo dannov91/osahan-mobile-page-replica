@@ -24,6 +24,12 @@ body {
 
 }
 
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
 /* ==== 0.3 TAG RULES ==== */
 
 a {
@@ -62,7 +68,7 @@ ul {
 
 }
 
-/* ==== 0.4 COMMERCIAL TAGS ==== */
+/* ==== 0.4 GENERAL CLASS STYLING ==== */
 
 .normal_tag {
 
@@ -80,6 +86,42 @@ ul {
 .aqua_tag { background: linear-gradient(135deg, #17a2b8 1%,#30def9 100%); }
 
 .bold_string { font-weight: bold; }
+
+.previous,
+.next {
+
+	position: absolute;
+	background: white;
+	border-radius: 50% 50%;
+	color: #4a3eed;
+	border: 2px solid #4a3eed;
+	font-size: 0.65rem;
+	box-shadow: 0 0 9px #ccc;
+	display: none;
+
+}
+
+/*===== 	PREVIOUS AND NEXT 	======*/
+
+.previous a,
+.next a {
+
+	color: #4a3eed;
+	padding: 11px 3px;
+
+}
+
+.previous { left: 10px; top:45%; }
+.next { right: 10px; top:45%; }
+
+.previous:hover { background: #4a3eed;}
+.next:hover { background: #4a3eed; }
+
+.previous:hover a { color: white;}
+.next:hover a { color: white; }
+
+[class*=section]:hover .previous,
+[class*=section]:hover .next { display: block; }
 
 /* ==============================
 1. HEADER
@@ -684,34 +726,15 @@ header .logo_menu .fa-navicon:hover { outline: 5px solid rgba(0, 0, 0, 0.3); }
 4. BANNER CAROUSEL
 ===============================*/
 
-.banner_carousel {
+.banner_carousel { position: relative; }
 
-	position: relative;
+.banner_carousel .previous,
+.banner_carousel .next { display: block; }
 
-}
-
-.banner_carousel img {
-
-	width: 100%;
-
-}
-
-.previous,
-.next {
-
-	position: absolute;
-	background: white;
-	border-radius: 50% 50%;
-	color: #4a3eed;
-	border: 2px solid;
-	padding: 11px 3px;
-	font-size: 0.65rem;
-	box-shadow: 0 0 9px #ccc;
-
-}
-
-.previous { left: 10px; top:45%; }
-.next { right: 10px; top:45%; }
+.banner_carousel .previous { left: 25px; }
+.banner_carousel .next { right: 25px; }
+.banner_carousel a { display: block; }
+.banner_carousel img { width: 100%; }
 
 /* ==============================
 5. SECTIONS / ITEMS STYLING
@@ -756,11 +779,9 @@ header .logo_menu .fa-navicon:hover { outline: 5px solid rgba(0, 0, 0, 0.3); }
 
 /* ==== 5.3 FEATURED ITEM ==== */
 
-[class*="section"] [class*="item"] .container_box {
+[class*="section"] [class*="item"] .container_box { width: 100%; }
 
-	width: 100%;
-
-}
+[class*="section"] [class*="item"] .container_box a { display: block; }
 
 [class*="section"] [class*="item"] {
 
@@ -773,6 +794,7 @@ header .logo_menu .fa-navicon:hover { outline: 5px solid rgba(0, 0, 0, 0.3); }
 	position: relative;
 	background: rgba(0, 0, 0, 0.01);
 	border: 1px solid rgba(0, 0, 0, 0.2);
+	overflow: hidden;
 	
 }
 
@@ -824,6 +846,13 @@ header .logo_menu .fa-navicon:hover { outline: 5px solid rgba(0, 0, 0, 0.3); }
 
 }
 
+[class*="item"] [class*=tooltip] {
+
+	background: black;
+	color: white;
+
+}
+
 [class*="item"] [class*=title] {
 
 	color: rgb(74, 62, 237);
@@ -866,8 +895,18 @@ header .logo_menu .fa-navicon:hover { outline: 5px solid rgba(0, 0, 0, 0.3); }
 	display: none;
 	flex-direction: column;
 	align-items: center;
+	position: relative;
 
 }
+
+[class*="item"] .footer_container_clicked a {
+
+	display: inline-block !important;
+	width: auto;
+
+}
+
+[class*="item"] .footer_container_clicked a:hover .fa { background: linear-gradient(to left, #4a3eed 0%, #9d1fff 100%); }
 
 [class*="item"] .footer_container_clicked .fa {
 
@@ -880,11 +919,7 @@ header .logo_menu .fa-navicon:hover { outline: 5px solid rgba(0, 0, 0, 0.3); }
 
 }
 
-[class*="item"] .footer_container_clicked .sizing {
-
-	margin: 15px;
-
-}
+[class*="item"] .footer_container_clicked .sizing { margin: 15px; }
 
 [class*="section"] [class*="item"]:hover { 
 
@@ -901,7 +936,47 @@ header .logo_menu .fa-navicon:hover { outline: 5px solid rgba(0, 0, 0, 0.3); }
 
 }
 
-/* ==== 5.4 FIXES ==== */
+[class*="item"] [class*="tool_"] { 
+
+/*	display: none;*/
+	opacity: 0;
+	visibility: hidden;
+	transition: opacity 0.35s;
+
+}
+
+[class*="item"] .icons_clicked .link_shopping_cart:hover .tool_cart_container,
+[class*="item"] .icons_clicked .link_search:hover .tool_search_container {
+
+/*	display: block !important;*/
+	visibility: visible;
+	opacity: 1;
+
+}
+
+[class*="item"] [class*="tooltip"] {
+
+	position: absolute;
+	padding: 5px 8px;
+	border-radius: 5px;
+
+}
+
+.tooltip_cart { top: -36px; left: 39%; }
+.tooltip_search { top: -36px; left: 45%; }
+
+[class*="item"] [class*="tool_"] [class*=squared] {
+
+	background: black;
+	width: 10px;
+	height: 10px;
+	position: absolute;
+	transform: rotate(45deg);
+
+}
+
+[class*="item"] .tool_cart_container .squared_cart { top: -18px; left: 46%; }
+[class*="item"] .tool_search_container .squared_search { top: -18px; left: 52%; }
 
 /* ==== 5.4.1 Featured Fixes ==== */
 
@@ -1040,7 +1115,10 @@ header .logo_menu .fa-navicon:hover { outline: 5px solid rgba(0, 0, 0, 0.3); }
 	display: flex;
 	flex-direction: column;
 	padding-bottom: 30px;
+	position: relative;
 }
+
+
 
 .top_brands_section .brands_header h1 {
 
@@ -1061,7 +1139,6 @@ header .logo_menu .fa-navicon:hover { outline: 5px solid rgba(0, 0, 0, 0.3); }
 	align-self: center;
 	background: white;
 	border-radius: 50% 50%;
-	display: flex;
 	padding: 14px 10px;
 	overflow: hidden;
 
@@ -1069,8 +1146,32 @@ header .logo_menu .fa-navicon:hover { outline: 5px solid rgba(0, 0, 0, 0.3); }
 
 .top_brands_section .brand_image_container img {
 
-	justify-content: center;
-	align-items: center;
+	transition: transform 0.25s;
+
+}
+
+.top_brands_section .brand_image_container:hover img { transform: scale(1.10); }
+
+.top_brands_section .brand_image_container:hover { 
+
+	border: 2px solid #4a3eed;
+	padding: 12px 10px;
+
+}
+
+.top_brands_section .previous { 
+	
+	left: 40px;
+	top: 55%;
+	display: none;
+	
+}
+
+.top_brands_section .next { 
+
+	right: 40px;
+	top: 55%;
+	display: none;
 
 }
 
@@ -1110,15 +1211,16 @@ header .logo_menu .fa-navicon:hover { outline: 5px solid rgba(0, 0, 0, 0.3); }
 
 }
 
-[class*="footer_section"] [class*=brands] p {
+[class*="footer_section"] [class*=brands] li {
 
 	flex: 50%;
-	color: white;
 	padding: 8px;
 
 }
 
-[class*="footer_section"] [class*=brands] p span {
+[class*="footer_section"] [class*=brands] li a { color: white; }
+
+[class*="footer_section"] [class*=brands] li span {
 
 	font-weight: bold;
 
@@ -1137,17 +1239,89 @@ header .logo_menu .fa-navicon:hover { outline: 5px solid rgba(0, 0, 0, 0.3); }
 10. SERVICE FOOTER STYLING
 ===============================*/
 
+.service_container .fa,
+.service_container [class*=policy] { float: left;}
+
 .service_container {
 
-	display: flex;
+	padding: 15px;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 
 }
 
+.service_container [class*=policy] { padding: 2px 0px; }
+
+.service_container .fa {
+
+	font-size: 2.5rem;
+	width: 40px;
+	text-align: center;
+	margin-right: 18px;
+	color: #9d1fff;
+
+}
+
+.service_container [class*=policy] h3 {
+
+	margin-bottom: 5px;
+	color: #4a3eed;
+
+}
+
+.service_container [class*=policy] p { color: #555555; }
+
 /* ==============================
-?????. MEDIA QUERIES
+11. FOOTER COMPANY SIDE NAV
 ===============================*/
 
-/*@media (min-width: 480px) {
+.company_aside_nav {
+
+	background: #343a40;
+	color: rgba(255, 255, 255, 0.8);
+	padding: 25px 15px;
+
+}
+
+.company_aside_nav .aside_ul {
+
+	margin: 0 auto;
+	text-align: center;
+
+}
+
+.company_aside_nav .aside_ul li { 
+
+	display: inline-block;
+	font-weight: bold;
+	padding: 0px 10px 10px;
+
+}
+
+.company_aside_nav .aside_ul li > a { color: white; }
+
+.company_aside_nav .copyright {
+
+	display: block;
+	text-align: center;
+	font-size: 0.73rem;
+	margin: 0 auto;
+
+}
+
+.company_aside_nav .copyright a {
+
+	color: rgba(255, 255, 255, 0.8);
+	width: auto;
+
+}
+
+.company_aside_nav .copyright .fa-heart { color: red;}
+
+/* ==============================
+12. MEDIA QUERIES
+===============================*/
+
+@media (min-width: 480px) {
 
 	.grid_container {display: flex;}
 
@@ -1170,7 +1344,7 @@ header .logo_menu .fa-navicon:hover { outline: 5px solid rgba(0, 0, 0, 0.3); }
 	.wrap2 .subwrap2 { flex-basis: 50%; }
 
 
-}*/
+}
 
 
 
