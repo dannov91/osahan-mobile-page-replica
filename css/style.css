@@ -927,6 +927,7 @@ header .logo_menu .fa-navicon:hover { outline: 5px solid rgba(0, 0, 0, 0.3); }
 	box-shadow: 0 0 5px 3px rgba(0, 0, 0, 0.1);
 
 }
+
 [class*="section"] [class*="item"]:hover .footer_container_unclicked { display: none; }
 [class*="section"] [class*="item"]:hover .footer_container_clicked{ display: flex; }
 [class*="section"] [class*="item"]:hover .image_container {
@@ -938,10 +939,33 @@ header .logo_menu .fa-navicon:hover { outline: 5px solid rgba(0, 0, 0, 0.3); }
 
 [class*="item"] [class*="tool_"] { 
 
-/*	display: none;*/
 	opacity: 0;
 	visibility: hidden;
 	transition: opacity 0.35s;
+	position: absolute;
+
+}
+
+[class*="item"] .link_shopping_cart,
+[class*="item"] .link_search {
+
+	position: relative;
+
+}
+
+[class*="item"] .icons_clicked .link_shopping_cart .tool_cart_container {
+
+	width: 150px;
+	top: 0;
+	left: -85px;
+
+}
+
+[class*="item"] .icons_clicked .link_search .tool_search_container {
+
+	width: 150px;
+	top: 0;
+	left: -91px;
 
 }
 
@@ -975,8 +999,8 @@ header .logo_menu .fa-navicon:hover { outline: 5px solid rgba(0, 0, 0, 0.3); }
 
 }
 
-[class*="item"] .tool_cart_container .squared_cart { top: -18px; left: 46%; }
-[class*="item"] .tool_search_container .squared_search { top: -18px; left: 52%; }
+[class*="item"] .tool_cart_container .squared_cart { top: -18px; left: 64%; }
+[class*="item"] .tool_search_container .squared_search { top: -18px; left: 68%; }
 
 /* ==== 5.4.1 Featured Fixes ==== */
 
