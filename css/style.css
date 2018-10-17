@@ -121,7 +121,7 @@ ul {
 .next:hover a { color: white; }
 
 [class*=section]:hover .previous,
-[class*=section]:hover .next { display: block; }
+[class*=section]:hover .next { display: block !important; }
 
 /* ==============================
 1. HEADER
@@ -145,6 +145,12 @@ header .logo_menu {
 	align-items: center;
 	margin-bottom: 13px;
 
+}
+
+header .logo_link { 
+
+	width: auto;
+	margin-right: auto;
 }
 
 header .logo_menu .logo {
@@ -536,7 +542,8 @@ header .logo_menu .fa-navicon:hover { outline: 5px solid rgba(0, 0, 0, 0.3); }
 
 .main_menu li .home_images img {
 
-	width: 100%;
+	max-width: 100%;
+	margin: 0 auto;
 
 }
 
@@ -562,6 +569,8 @@ header .logo_menu .fa-navicon:hover { outline: 5px solid rgba(0, 0, 0, 0.3); }
 	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 
 }
+
+.main_menu .product_submenu .product_column1 { display: none; }
 
 .main_menu .product_submenu .indenter {
 
@@ -777,7 +786,9 @@ header .logo_menu .fa-navicon:hover { outline: 5px solid rgba(0, 0, 0, 0.3); }
 #featured_pos,
 #onsale_pos { top: 30px; }
 
-/* ==== 5.3 FEATURED ITEM ==== */
+/* ==== 5.3 SECTION ITEMS ==== */
+
+[class*="section"] [class*="wrapper"] { position: relative; }
 
 [class*="section"] [class*="item"] .container_box { width: 100%; }
 
@@ -791,17 +802,19 @@ header .logo_menu .fa-navicon:hover { outline: 5px solid rgba(0, 0, 0, 0.3); }
 	align-items: center;
 	padding: 10px;
 	border-radius: 10px;
-	position: relative;
 	background: rgba(0, 0, 0, 0.01);
-	border: 1px solid rgba(0, 0, 0, 0.2);
+	border: 1px solid rgba(0, 0, 0, 0.1);
 	overflow: hidden;
+	position: relative;
 	
 }
+
+[class*="section"] [class*="wrapper"] > :not(:nth-child(1)) { display: none; }
 
 [class*="item"] .image_container {
 
 	width: 100%;
-	border: 1px solid rgba(0, 0, 0, 0.2);
+	border: 1px solid rgba(0, 0, 0, 0.1);
 	border-radius: 10px;
 	background: white;
 	transition: transform ease 0.25s, border ease 0.25s;
@@ -1028,6 +1041,7 @@ header .logo_menu .fa-navicon:hover { outline: 5px solid rgba(0, 0, 0, 0.3); }
 .hot_section [class*="hot_item"] {
 
 	margin-bottom: 15px;
+	display: block !important;
 
 }
 
@@ -1035,11 +1049,11 @@ header .logo_menu .fa-navicon:hover { outline: 5px solid rgba(0, 0, 0, 0.3); }
 6. PHONE GRID - GRID MODULE
 ===============================*/
 
-.grid_container {/*	padding: 15px; */ }
+.grid_container { padding: 25px 15px 0;  }
 
 .grid_container div[class*="item"] {
 
-	border: 1px solid rgba(193, 193, 193, 0.3);
+	border: 1px solid rgba(0, 0, 0, 0.1);
 	border-radius: 5px;
 	margin-bottom: 30px;
 	position: relative;
@@ -1050,8 +1064,9 @@ header .logo_menu .fa-navicon:hover { outline: 5px solid rgba(0, 0, 0, 0.3); }
 .grid_container div[class*="item"] img {
 
 	position: relative;
-	width: 100%;
+	max-width: 100%;
 	transition: transform 0.25s;
+	margin: 0 auto;
 
 }
 
@@ -1158,28 +1173,37 @@ header .logo_menu .fa-navicon:hover { outline: 5px solid rgba(0, 0, 0, 0.3); }
 	display: inline-block;
 }
 
-.top_brands_section .brand_image_container {
+.top_brands_section .brands_container {
 
-	align-self: center;
+	display: flex;
+	justify-content: center;
+
+}
+
+.top_brands_section .brands_container > [class*=brand] {
+
 	background: white;
 	border-radius: 50% 50%;
 	padding: 14px 10px;
 	overflow: hidden;
+	display: inline-block;
 
 }
 
-.top_brands_section .brand_image_container img {
+.top_brands_section .brands_container > [class*=brand] img {
 
 	transition: transform 0.25s;
 
 }
 
-.top_brands_section .brand_image_container:hover img { transform: scale(1.10); }
+.top_brands_section .brands_container > :not(:nth-child(1)) { display: none; }
 
-.top_brands_section .brand_image_container:hover { 
+.top_brands_section .brands_container > [class*=brand]:hover img { transform: scale(1.10); }
+
+.top_brands_section .brands_container > [class*=brand]:hover { 
 
 	border: 2px solid #4a3eed;
-	padding: 12px 10px;
+	padding: 12px 8px;
 
 }
 
@@ -1345,9 +1369,86 @@ header .logo_menu .fa-navicon:hover { outline: 5px solid rgba(0, 0, 0, 0.3); }
 12. MEDIA QUERIES
 ===============================*/
 
+/* ====11.1 MAJOR BREAKPOINT: MIN-WIDTH 480PX
+@@@ SECTIONS: FEATURED / ON SALE / BEST SELLERS / TOP BRANDS --> TWO COLUMN LAYOUT
+ ==== */
+
 @media (min-width: 480px) {
 
-	.grid_container {display: flex;}
+	[class*=section] [class*=wrapper] { display: flex; }
+
+	[class*=section] [class*=item] { flex: calc(50% - 2px); }
+
+	[class*=section] [class*=item1] { margin-right: 2px; }
+
+	[class*=section] [class*=item2] { 
+
+		margin-left: 2px; 
+		display: block !important;
+
+	}
+
+	.hot_section .hot_wrapper {
+
+		display: block;
+
+	}
+
+	.top_brands_section .brands_container {justify-content: space-around;}
+
+	.top_brands_section .brands_container .brand2 {display: block;}	
+
+}
+
+/* ====11.2 MAJOR BREAKPOINT: MIN-WIDTH 576PX 
+@@@ MENU --> LAYOUT CHANGED TOTALLY
+@@@ DEPLOY PHONE GRID CONTAINER
+@@@ HOT SECTION --> TWO COLUMNS LAYOUT
+@@@ MAIN FOOTER --> TWO COLUMNS LAYOUT
+==== */
+
+@media (min-width: 576px) {
+
+	/* =============================================== */
+
+	.main_menu li .home_images li {
+
+		float: left;
+		width: 25%
+
+	}
+
+	.main_menu li .home_images li a img {
+
+		margin: 0;
+
+	}
+
+	.main_menu .product_submenu {
+
+
+
+	}
+
+	.main_menu .product_submenu .product_column1 a img {
+
+		max-width: 100%;
+
+	}
+
+	.main_menu .product_submenu [class*="product_column"] { 
+
+		display: block;
+		float: left;
+		width: 25%;
+		border-left: 1px solid rgba(0, 0, 0, 0.1) ;
+		height: 100%;
+
+	}
+
+	/* =============================================== */
+
+	.grid_container {display: flex; padding: 0; }
 
 	.grid_container .sub_container1 { flex-basis: 66.66% }
 
@@ -1367,11 +1468,20 @@ header .logo_menu .fa-navicon:hover { outline: 5px solid rgba(0, 0, 0, 0.3); }
 	.wrap2 .subwrap1,
 	.wrap2 .subwrap2 { flex-basis: 50%; }
 
+	/* =============================================== */
+
+	.hot_section .hot_wrapper { display: flex; flex-wrap: wrap; }
+
+	.hot_section [class*="hot_item"] { flex: calc(50% - 30px); }
+
+	.hot_section [class*="hot_item"]:nth-child(odd) { margin-right: 15px; }
+	.hot_section [class*="hot_item"]:nth-child(even) { margin-left: 15px; }
+
+	/* =============================================== */
+
+	.main_footer { display: flex; flex-wrap: wrap; }
+
+	.main_footer [class*="footer_section"] { flex: calc(50% - 30px); }
 
 }
-
-
-
-
-
 
