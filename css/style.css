@@ -1424,15 +1424,36 @@ header .logo_menu .fa-navicon:hover { outline: 5px solid rgba(0, 0, 0, 0.3); }
 
 	}
 
-	.main_menu .product_submenu {
+	/* SPECIAL NOTE: FLOATING CHILDS, MULTIPLE LAYERING TO ACHIEVE SAME HEIGHT;
+	   THIS IS JUST AN EXPERIMENT THAT CAN BE EASILY ACHIEVED WITH FLEX MODULE */
 
+	.main_menu .product_submenu [class*="product_container"] {
 
+		float: left;
+		position: relative;
 
 	}
 
-	.main_menu .product_submenu .product_column1 a img {
+	.main_menu .product_submenu .product_container_1,
+	.main_menu .product_submenu .product_container_2,
+	.main_menu .product_submenu .product_container_3 {
 
-		max-width: 100%;
+		left: 25%;
+		border-left: 1px solid rgba(0, 0, 0, 0.1);
+
+	}
+
+	.main_menu .product_submenu .product_container_1 {width: calc(100% + 6px);}
+	.main_menu .product_submenu .product_container_2 {width: calc(100% + 3px);}
+	.main_menu .product_submenu .product_container_3 {width: calc(100% + 3px);}
+
+	
+
+	.main_menu .product_submenu .product_container_4 {
+
+		overflow: hidden;
+		border-left: 1px solid rgba(0, 0, 0, 0.1);
+		width: calc(100% - 0px);
 
 	}
 
@@ -1441,8 +1462,21 @@ header .logo_menu .fa-navicon:hover { outline: 5px solid rgba(0, 0, 0, 0.3); }
 		display: block;
 		float: left;
 		width: 25%;
-		border-left: 1px solid rgba(0, 0, 0, 0.1) ;
-		height: 100%;
+		position: relative;
+		right: 75%;
+
+	}
+
+	.main_menu .product_submenu .product_column1 a { display: block;
+	}
+
+	.main_menu .product_submenu .product_column1 a img {
+
+		max-width: calc(100%);
+		display: block;
+		position: relative;
+		left: 0;
+		margin: 0 auto;
 
 	}
 
