@@ -85,8 +85,6 @@ ul {
 .yellow_tag { background: linear-gradient(135deg, #ffc107 1%,#fffc07 100%); color: black;}
 .aqua_tag { background: linear-gradient(135deg, #17a2b8 1%,#30def9 100%); }
 
-.bold_string { font-weight: bold; }
-
 .previous,
 .next {
 
@@ -98,6 +96,22 @@ ul {
 	font-size: 0.65rem;
 	box-shadow: 0 0 9px #ccc;
 	display: none;
+
+}
+
+.bold_string { font-weight: bold; }
+
+.purple_string {
+
+	color: #9d1fff;
+	font-weight: bold;
+
+}
+
+.red_string {
+
+	color: #ff253a;
+	font-weight: bold;
 
 }
 
@@ -126,6 +140,45 @@ ul {
 /* ==============================
 1. HEADER
 ===============================*/
+
+.sales_and_apps {
+
+	display: none;
+	flex-direction: column;
+	width: 40%;
+	margin: 0 auto;
+
+}
+
+.sales_and_apps .best_sales {
+
+	align-self: center;
+	margin: 7px 0px 5px;
+	color: #7E7E7E;
+
+}
+
+.sales_and_apps .all_apps {
+
+	display: flex;
+	justify-content: space-around;
+	margin: 5px 0 7px;
+
+}
+
+.sales_and_apps .all_apps .contact_us { color: #4a3eed; }
+
+.sales_and_apps .all_apps a {
+
+	display: inline-block;
+	height: auto;
+	width: auto;
+
+}
+
+.sales_and_apps .all_apps .download_app a { color: #4a3eed; }
+
+.sales_and_apps .all_apps .download_app a:hover { color: #0069d9; }
 
 header { 
 
@@ -642,6 +695,8 @@ header .logo_menu .fa-navicon:hover { outline: 5px solid rgba(0, 0, 0, 0.3); }
 
 /* ==== 3.4 PAGES SUBMENU ==== */
 
+.main_menu .pages_submenu { flex-direction: column; }
+
 .main_menu .pages_submenu .pages_title { margin-bottom: 10px; }
 
 .main_menu .pages_submenu .pages_title:hover { background: #e1e7ec; }
@@ -676,6 +731,8 @@ header .logo_menu .fa-navicon:hover { outline: 5px solid rgba(0, 0, 0, 0.3); }
 .main_menu .pages_submenu .pages_list li:hover .indenter { width: 10px; }
 
 /* ==== 3.5 COMPONENTS SUBMENU ==== */
+
+.main_menu .components_submenu { flex-direction: column; }
 
 .main_menu .components_submenu .components_title { margin-bottom: 10px; }
 
@@ -731,6 +788,19 @@ header .logo_menu .fa-navicon:hover { outline: 5px solid rgba(0, 0, 0, 0.3); }
 .main_menu .blog_list li:hover { background: #e1e7ec; }
 .main_menu .blog_list li:hover .indenter { width: 10px; }
 
+/* ==== 3.7 CONTACT SUBMENU ==== */
+
+/*EMPTY*/
+
+/* ==== 3.8 BLOG SUBMENU ==== */
+
+.main_menu .destination_message {
+
+	padding: 15px;
+	color: rgba(0,0,0,.5);
+
+}
+
 /* ==============================
 4. BANNER CAROUSEL
 ===============================*/
@@ -760,13 +830,13 @@ header .logo_menu .fa-navicon:hover { outline: 5px solid rgba(0, 0, 0, 0.3); }
 
 /* ==== 5.2 HEADER STYLING ==== */
 
-[class*="section"] [class*=header] {
+[class*="section"] [class*="header"] {
 
 	position: relative;
 
 }
 
-[class*="section"] [class*=header] h1 {
+[class*="section"] [class*="header"] h1 {
 
 	color: #343a40;
 	font-size: 1rem;
@@ -1023,11 +1093,29 @@ header .logo_menu .fa-navicon:hover { outline: 5px solid rgba(0, 0, 0, 0.3); }
 
 }
 
-.featured_section .featured_header h1 {
+.featured_section .featured_header h1 { 
 
 	color: white;
+	width: 50%;
+	display: inline-block;
 
 }
+
+.featured_section .featured_header .featured_more {
+
+	display: inline-block;
+	position: absolute;
+	right: 0px;
+	padding: 10px;
+	background: linear-gradient(135deg, #ffc107 1%,#fffc07 100%);
+	border-radius: 5px;
+	display: none;
+	width: auto;
+	height: auto;
+
+}
+
+.featured_section .featured_header h1 { color: white; }
 
 .featured_section [class*="item"] {
 
@@ -1037,6 +1125,41 @@ header .logo_menu .fa-navicon:hover { outline: 5px solid rgba(0, 0, 0, 0.3); }
 }
 
 /* ==== 5.4.2 Hot Fixes ==== */
+
+.hot_section .hot_header h1 {
+
+	display: inline-block;
+	width: 50%;
+
+}
+
+.hot_section .hot_header .hot_offer {
+
+	display: inline-block;
+	width: 50%;
+	position: absolute;
+	right: 0;
+	text-align: right;
+	display: none;
+
+}
+
+.hot_section .hot_header .hot_offer li {
+
+	display: inline-block;
+	text-align: center;
+	background: linear-gradient(to right, #4a3eed 0%, #9d1fff 100%);
+	border-radius: 3px;
+	color: white;
+	font-weight: bold;
+	width: 60px;
+	padding: 3px 8px;
+
+}
+
+.hot_offer .hot_number { font-size: 1.2rem; }
+
+.hot_offer .hot_time { font-size: 0.6rem; }
 
 .hot_section [class*="hot_item"] {
 
@@ -1365,6 +1488,15 @@ header .logo_menu .fa-navicon:hover { outline: 5px solid rgba(0, 0, 0, 0.3); }
 
 .company_aside_nav .copyright .fa-heart { color: red;}
 
+.company_aside_nav .aside_container_2 { display: none; }
+
+.company_aside_nav .aside_container_2 .fa:hover {
+
+	background: #4a3eed;
+	color: white;
+
+ }
+
 /* ==============================
 12. MEDIA QUERIES
 ===============================*/
@@ -1400,7 +1532,8 @@ header .logo_menu .fa-navicon:hover { outline: 5px solid rgba(0, 0, 0, 0.3); }
 
 }
 
-/* ====11.2 MAJOR BREAKPOINT: MIN-WIDTH 576PX 
+/* ====11.2 MAJOR BREAKPOINT: MIN-WIDTH 576PX
+@@@ ADDED SALES INFO BEFORE HEADING  
 @@@ MENU --> LAYOUT CHANGED TOTALLY
 @@@ DEPLOY PHONE GRID CONTAINER
 @@@ HOT SECTION --> TWO COLUMNS LAYOUT
@@ -1410,6 +1543,8 @@ header .logo_menu .fa-navicon:hover { outline: 5px solid rgba(0, 0, 0, 0.3); }
 @media (min-width: 576px) {
 
 	/* =============================================== */
+
+	.sales_and_apps { display: flex; }
 
 	.main_menu li .home_images li {
 
@@ -1424,8 +1559,17 @@ header .logo_menu .fa-navicon:hover { outline: 5px solid rgba(0, 0, 0, 0.3); }
 
 	}
 
+	/* =============================================== */
+
+	.featured_section .featured_header .featured_more { display: inline-block; }
+
+	.hot_section .hot_header .hot_offer { display: inline-block; }
+
+	/* =============================================== */
+
 	/* SPECIAL NOTE: FLOATING CHILDS, MULTIPLE LAYERING TO ACHIEVE SAME HEIGHT;
-	   THIS IS JUST AN EXPERIMENT THAT CAN BE EASILY ACHIEVED WITH FLEX MODULE */
+	   THIS IS JUST AN EXPERIMENT THAT CAN BE EASILY ACHIEVED WITH FLEX MODULE
+	   PRODUCTS SUBMENU CASE */
 
 	.main_menu .product_submenu [class*="product_container"] {
 
@@ -1482,6 +1626,86 @@ header .logo_menu .fa-navicon:hover { outline: 5px solid rgba(0, 0, 0, 0.3); }
 
 	/* =============================================== */
 
+	/* SPECIAL NOTE: FLOATING CHILDS, MULTIPLE LAYERING TO ACHIEVE SAME HEIGHT;
+	   THIS IS JUST AN EXPERIMENT THAT CAN BE EASILY ACHIEVED WITH FLEX MODULE
+	   BRANDS SUBMENU CASE */
+
+	.main_menu .brands_submenu [class*="brands_container"] {
+
+		float: left;
+		position: relative;
+
+	}
+
+	.main_menu .brands_submenu .brands_container_1,
+	.main_menu .brands_submenu .brands_container_2,
+	.main_menu .brands_submenu .brands_container_3 {
+
+		left: 25%;
+		border-left: 1px solid rgba(0, 0, 0, 0.1);
+
+	}
+
+	.main_menu .brands_submenu .brands_container_1 {width: calc(100% + 6px);}
+	.main_menu .brands_submenu .brands_container_2 {width: calc(100% + 3px);}
+	.main_menu .brands_submenu .brands_container_3 {width: calc(100% + 3px);}
+
+	
+
+	.main_menu .brands_submenu .brands_container_4 {
+
+		overflow: hidden;
+		border-left: 1px solid rgba(0, 0, 0, 0.1);
+		width: calc(100% - 0px);
+
+	}
+
+	.main_menu .brands_submenu [class*="brands_column"] { 
+
+		display: block;
+		float: left;
+		width: 25%;
+		position: relative;
+		right: 75%;
+
+	}
+
+	.main_menu .brands_submenu .brands_column_4 a { display: block; }
+
+	.main_menu .brands_submenu .brands_column_4 a img {
+
+		max-width: 100%;
+		display: block;
+		position: relative;
+		left: 0;
+		margin: 0 auto;
+
+	}
+
+	/* =============================================== */
+
+	.main_menu .pages_submenu { flex-direction: row;}
+
+	.main_menu .pages_submenu .pages_container {
+
+		flex: 16.666%;
+		border-left: 1px solid rgba(0, 0, 0, 0.1);
+
+	}
+
+	/* =============================================== */
+
+	.main_menu .components_submenu { flex-direction: row;}
+
+	.main_menu .components_submenu .components_container {
+
+		flex: 25%;
+		border-left: 1px solid rgba(0, 0, 0, 0.1);
+
+	}
+
+	/* =============================================== */
+
 	.grid_container {display: flex; padding: 0; }
 
 	.grid_container .sub_container1 { flex-basis: 66.66% }
@@ -1517,5 +1741,79 @@ header .logo_menu .fa-navicon:hover { outline: 5px solid rgba(0, 0, 0, 0.3); }
 
 	.main_footer [class*="footer_section"] { flex: calc(50% - 30px); }
 
+	.company_aside_nav .aside_container_1 {
+
+		float: left;
+		width: 60%;
+
+	}
+
+	.company_aside_nav .aside_container_2 {
+
+		float: left;
+		padding: 20px 0;
+		width: 40%;
+		text-align: center;
+		display: block;
+
+	}
+
+	.company_aside_nav .aside_container_2 a { width: auto; }
+
+	.company_aside_nav .aside_container_2 .fa {
+
+		color: #343a40;
+		background: white;
+		padding: 9px;
+		border-radius: 50% 50%;
+		font-size: 1rem;
+		width: 34px;
+
+	}
+
 }
+
+/* ====11.3 MAJOR BREAKPOINT: MIN-WIDTH 769PX
+
+==== */
+
+@media (min-width: 769px) {
+
+	/* =============================================== */
+
+	.sales_and_apps {
+
+		width: 100%;
+		padding: 0 20px;
+		flex-direction: row;
+		justify-content: space-between;
+
+	}
+
+	.sales_and_apps .all_apps {margin: 0;}
+
+	.sales_and_apps .all_apps .contact_us {
+
+		padding: 7px 15px;
+		border-left: 1px solid #e0e0e0;		
+
+	}
+
+	.sales_and_apps .all_apps .download_app {
+
+		padding: 7px 15px;
+		border-left: 1px solid #e0e0e0;	
+		border-right: 1px solid #e0e0e0;	
+
+	}
+
+	/* =============================================== */
+
+	
+
+}
+
+
+
+
 

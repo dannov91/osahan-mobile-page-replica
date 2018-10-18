@@ -106,7 +106,7 @@ function showPages () {
 		document.getElementById('showHome').style.display = "none";
 		document.getElementById('showProducts').style.display = "none";
 		document.getElementById('showBrands').style.display = "none";
-		document.getElementById('showPages').style.display = "block";
+		document.getElementById('showPages').style.display = "flex";
 		document.getElementById('showComponents').style.display = "none";
 		document.getElementById('showBlog').style.display = "none";
 
@@ -126,7 +126,7 @@ function showComponents () {
 		document.getElementById('showProducts').style.display = "none";
 		document.getElementById('showBrands').style.display = "none";
 		document.getElementById('showPages').style.display = "none";
-		document.getElementById('showComponents').style.display = "block";
+		document.getElementById('showComponents').style.display = "flex";
 		document.getElementById('showBlog').style.display = "none";
 
 	} else {
