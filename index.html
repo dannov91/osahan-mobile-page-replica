@@ -14,6 +14,7 @@
 	<div class="sales_and_apps">
 		<div class="best_sales">SALE - GET MIN <span class="red_string">40-80% OFF!</span></div>
 		<div class="all_apps">
+			<span class="phone_number"><i class="fa fa-mobile"></i>&nbsp;+1-123-456-7890</span>
 			<a href="" class="contact_us"><i class="fa fa-headphones"></i>&nbsp;Contact Us</a>
 			<span class="download_app">DOWNLOAD APP&nbsp;&nbsp;
 
@@ -32,13 +33,25 @@
 			<a class="logo_link" href=""><img class="logo" src="https://askbootstrap.com/preview/osahan-mobile/images/logo-white.png" alt=""></a>
 			<i class="fa fa-navicon" onclick="showMenu()"></i>
 		</div>
+			
+<!-- THIS MUST BE RESOLVED WITH JAVASCRIPT-->
 
-		<div class="search_bar">
-			<form action="">
-				<input type="text" name="searchUser" placeholder="Search products & brands">
-			</form>
-			<a href=""><i class="fa fa-search"></i>&nbsp;SEARCH</a>
-		</div>
+		<form class="search_bar">
+			<select name="mobile_category" id="mobile_category">
+				<option value="all_categories" id="all_categories">All Categories<i class="fa fa-caret-down"></i></option>
+				<optgroup label="Android">
+					<option value="samsung">Samsung</option>
+					<option value="micromax">Micromax</option>
+					<option value="lenovo">Lenovo</option>
+					<option value="vivo">Vivo</option>
+				</optgroup>
+				<optgroup label="iOs">
+					<option value="apple">Apple</option>
+				</optgroup>
+			</select>
+			<input type="text" name="searchUser" placeholder="Search products & brands">
+			<button href=""><i  class="fa fa-search"></i>&nbsp;SEARCH</button>
+		</form>
 
 		<ul class="cart_account">
 
@@ -483,7 +496,7 @@
 
 			</li>
 
-			<li>
+			<li id="blog_identifier">
 				<a class="menu_link" onclick="showBlog()">BLOG&nbsp;&nbsp;<i class="fa fa-caret-down"></i></a>
 					<ul class="blog_list" id="showBlog" style="display: none;">
 						<li><a href=""><span class="indenter"></span><i class="fa fa-angle-right"></i>&nbsp;&nbsp;Blog - Right Sidebar</a></li>
@@ -499,7 +512,7 @@
 				<a class="menu_link" href="">CONTACT</a>
 			</li>
 
-			<li><p class="destination_message" href="">World's Fastest <span class="purple_string">Online Shopping</span> Destination</p></li>
+			<li><p class="destination_message">World's Fastest <span class="purple_string">Online Shopping</span> Destination</p></li>
 
 		</ul>
 
@@ -703,6 +716,64 @@
 
 			</div>
 
+			<div class="featured_item4">
+
+				<div class="container_box">
+
+					<div class="image_container">
+						<a href="">
+						<img id="product_image" src="https://askbootstrap.com/preview/osahan-mobile/images/all-products/small/1.jpg" alt="">
+						</a>
+					</div>
+
+					<div class="footer_container_unclicked">
+						<h2 class="featured_title">Lorem ipsum dolor.</h2>
+						<div class="product_price">
+							<span class="prev_price">$299.99&nbsp;</span>
+							<span class="actual_price">$229.99</span>
+						</div>
+						<span class="review">
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							(613)
+						</span>
+					</div>
+
+					<div class="footer_container_clicked">
+
+						<div class="icons_clicked">
+
+							<a href="" class="link_shopping_cart">
+								<i class="fa fa-shopping-cart"></i>
+								<div class="tool_cart_container">
+									<span class="tooltip_cart">Add To Cart</span>
+									<div class="squared_cart"></div>
+								</div>
+							</a>
+					
+							<a href="" class="link_search">
+								<i class="fa fa-search"></i>
+								<div class="tool_search_container">
+									<span class="tooltip_search">View Detail</span>
+									<div class="squared_search"></div>
+								</div>
+							</a>
+					
+						</div>
+
+						<span class="sizing"><span class="bold_string">Size</span>&nbsp;&nbsp;ONE SIZE</span>
+					</div>
+
+					<i class="fa fa-heart"></i>
+					<span class="normal_tag red_tag">HOT</span>
+
+				</div>
+
+			</div>
+
 			<div class="previous feat_prev"><a href="">PREV</a></div>
 			<div class="next feat_next"><a href="">NEXT</a></div>
 		</div>
@@ -718,8 +789,9 @@
 				<div class="item1">
 					<a class="grid_link" href=""><img src="https://askbootstrap.com/preview/osahan-mobile/images/offers-list/1.jpg" alt="">
 						<div class="pfoot">
-							<h2>PRODUCT NAME</h2>
+							<h2 class="pfoot_heading">PRODUCT NAME</h2>
 							<i class="fa fa-shopping-cart"></i>
+							<spam class="pfoot_description">Lorem ipsum dolor sit amet.</spam>				
 						</div>
 					</a>
 				</div>
@@ -733,8 +805,9 @@
 					<div class="item2">
 						<a class="grid_link" href=""><img src="https://askbootstrap.com/preview/osahan-mobile/images/offers-list/2.jpg" alt="">
 						<div class="pfoot">
-							<h2>PRODUCT NAME</h2>
+							<h2 class="pfoot_heading">PRODUCT NAME</h2>
 							<i class="fa fa-shopping-cart"></i>
+							<spam class="pfoot_description">Lorem ipsum dolor sit amet.</spam>	
 						</div>
 						</a>
 					</div>
@@ -742,8 +815,9 @@
 					<div class="item3">
 						<a class="grid_link" href=""><img src="https://askbootstrap.com/preview/osahan-mobile/images/offers-list/3.jpg" alt="">
 						<div class="pfoot">
-							<h2>PRODUCT NAME</h2>
+							<h2 class="pfoot_heading">PRODUCT NAME</h2>
 							<i class="fa fa-shopping-cart"></i>
+							<spam class="pfoot_description">Lorem ipsum dolor sit amet.</spam>	
 						</div>
 						</a>
 					</div>
@@ -755,8 +829,9 @@
 					<div class="item4">
 						<a class="grid_link" href=""><img src="https://askbootstrap.com/preview/osahan-mobile/images/offers-list/4.jpg" alt="">
 						<div class="pfoot">
-							<h2>PRODUCT NAME</h2>
+							<h2 class="pfoot_heading">PRODUCT NAME</h2>
 							<i class="fa fa-shopping-cart"></i>
+							<spam class="pfoot_description">Lorem ipsum dolor sit amet.</spam>	
 						</div>
 						</a>
 					</div>
@@ -764,8 +839,9 @@
 					<div class="item5">
 						<a class="grid_link" href=""><img src="https://askbootstrap.com/preview/osahan-mobile/images/offers-list/5.jpg" alt="">
 						<div class="pfoot">
-							<h2>PRODUCT NAME</h2>
+							<h2 class="pfoot_heading">PRODUCT NAME</h2>
 							<i class="fa fa-shopping-cart"></i>
+							<spam class="pfoot_description">Lorem ipsum dolor sit amet.</spam>	
 						</div>
 						</a>
 					</div>
@@ -773,8 +849,9 @@
 					<div class="item6">
 						<a class="grid_link" href=""><img src="https://askbootstrap.com/preview/osahan-mobile/images/offers-list/6.jpg" alt="">
 						<div class="pfoot">
-							<h2>PRODUCT NAME</h2>
+							<h2 class="pfoot_heading">PRODUCT NAME</h2>
 							<i class="fa fa-shopping-cart"></i>
+							<spam class="pfoot_description">Lorem ipsum dolor sit amet.</spam>	
 						</div>
 						</a>
 					</div>
@@ -790,8 +867,9 @@
 			<div class="item7">
 				<a class="grid_link" href=""><img src="https://askbootstrap.com/preview/osahan-mobile/images/offers-list/7.jpg" alt="">
 					<div class="pfoot">
-						<h2>PRODUCT NAME</h2>
+						<h2 class="pfoot_heading">PRODUCT NAME</h2>
 						<i class="fa fa-shopping-cart"></i>
+						<spam class="pfoot_description">Lorem ipsum dolor sit amet.</spam>	
 					</div>
 				</a>
 			</div>
@@ -799,8 +877,9 @@
 			<div class="item8">
 				<a class="grid_link" href=""><img src="https://askbootstrap.com/preview/osahan-mobile/images/offers-list/8.jpg" alt="">
 					<div class="pfoot">
-						<h2>PRODUCT NAME</h2>
+						<h2 class="pfoot_heading">PRODUCT NAME</h2>
 						<i class="fa fa-shopping-cart"></i>
+						<spam class="pfoot_description">Lorem ipsum dolor sit amet.</spam>	
 					</div>
 				</a>
 			</div>
@@ -808,8 +887,9 @@
 			<div class="item9">
 				<a class="grid_link" href=""><img src="https://askbootstrap.com/preview/osahan-mobile/images/offers-list/9.jpg" alt="">
 					<div class="pfoot">
-						<h2>PRODUCT NAME</h2>
+						<h2 class="pfoot_heading">PRODUCT NAME</h2>
 						<i class="fa fa-shopping-cart"></i>
+						<spam class="pfoot_description">Lorem ipsum dolor sit amet.</spam>	
 					</div>
 				</a>
 			</div>
@@ -941,6 +1021,118 @@
 
 			</div>
 
+			<div class="onsale_item3">
+
+				<div class="container_box">
+
+					<div class="image_container">
+						<a href=""><img id="product_image" src="https://askbootstrap.com/preview/osahan-mobile/images/all-products/small/1.jpg" alt=""></a>
+					</div>
+
+					<div class="footer_container_unclicked">
+						<h2 class="onsale_title">Lorem ipsum dolor.</h2>
+						<div class="product_price">
+							<span class="prev_price">$299.99&nbsp;</span>
+							<span class="actual_price">$229.99</span>
+						</div>
+						<span class="review">
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							(613)
+						</span>
+					</div>
+
+					<div class="footer_container_clicked">
+
+						<div class="icons_clicked">
+
+							<a href="" class="link_shopping_cart">
+								<i class="fa fa-shopping-cart"></i>
+								<div class="tool_cart_container">
+									<span class="tooltip_cart">Add To Cart</span>
+									<div class="squared_cart"></div>
+								</div>
+							</a>
+					
+							<a href="" class="link_search">
+								<i class="fa fa-search"></i>
+								<div class="tool_search_container">
+									<span class="tooltip_search">View Detail</span>
+									<div class="squared_search"></div>
+								</div>
+							</a>
+
+						</div>
+
+						<span class="sizing"><span class="bold_string">Size</span>&nbsp;&nbsp;ONE SIZE</span>
+					</div>
+
+					<i class="fa fa-heart"></i>
+					<span class="normal_tag red_tag">HOT</span>
+
+				</div>
+
+			</div>
+
+			<div class="onsale_item4">
+
+				<div class="container_box">
+
+					<div class="image_container">
+						<a href=""><img id="product_image" src="https://askbootstrap.com/preview/osahan-mobile/images/all-products/small/1.jpg" alt=""></a>
+					</div>
+
+					<div class="footer_container_unclicked">
+						<h2 class="onsale_title">Lorem ipsum dolor.</h2>
+						<div class="product_price">
+							<span class="prev_price">$299.99&nbsp;</span>
+							<span class="actual_price">$229.99</span>
+						</div>
+						<span class="review">
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							(613)
+						</span>
+					</div>
+
+					<div class="footer_container_clicked">
+
+						<div class="icons_clicked">
+
+							<a href="" class="link_shopping_cart">
+								<i class="fa fa-shopping-cart"></i>
+								<div class="tool_cart_container">
+									<span class="tooltip_cart">Add To Cart</span>
+									<div class="squared_cart"></div>
+								</div>
+							</a>
+					
+							<a href="" class="link_search">
+								<i class="fa fa-search"></i>
+								<div class="tool_search_container">
+									<span class="tooltip_search">View Detail</span>
+									<div class="squared_search"></div>
+								</div>
+							</a>
+
+						</div>
+
+						<span class="sizing"><span class="bold_string">Size</span>&nbsp;&nbsp;ONE SIZE</span>
+					</div>
+
+					<i class="fa fa-heart"></i>
+					<span class="normal_tag red_tag">HOT</span>
+
+				</div>
+
+			</div>
+
 			<div class="previous feat_prev"><a href="">PREV</a></div>
 			<div class="next feat_next"><a href="">NEXT</a></div>
 
@@ -964,7 +1156,7 @@
 
 		<div class="sellers_wrapper">
 			
-			<div class="sellers_item1"">
+			<div class="sellers_item1">
 
 				<div class="container_box">
 
@@ -1020,7 +1212,7 @@
 
 			</div>
 
-			<div class="sellers_item2"">
+			<div class="sellers_item2">
 
 				<div class="container_box">
 
@@ -1075,6 +1267,120 @@
 				</div>
 
 			</div>
+
+			<div class="sellers_item3">
+
+				<div class="container_box">
+
+					<div class="image_container">
+						<a href=""><img id="product_image" src="https://askbootstrap.com/preview/osahan-mobile/images/all-products/small/1.jpg" alt=""></a>
+					</div>
+
+					<div class="footer_container_unclicked">
+						<h2 class="sellers_title">Lorem ipsum dolor.</h2>
+						<div class="product_price">
+							<span class="prev_price">$299.99&nbsp;</span>
+							<span class="actual_price">$229.99</span>
+						</div>
+						<span class="review">
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							(613)
+						</span>
+					</div>
+
+					<div class="footer_container_clicked">
+
+						<div class="icons_clicked">
+
+							<a href="" class="link_shopping_cart">
+								<i class="fa fa-shopping-cart"></i>
+								<div class="tool_cart_container">
+									<span class="tooltip_cart">Add To Cart</span>
+									<div class="squared_cart"></div>
+								</div>
+							</a>
+					
+							<a href="" class="link_search">
+								<i class="fa fa-search"></i>
+								<div class="tool_search_container">
+									<span class="tooltip_search">View Detail</span>
+									<div class="squared_search"></div>
+								</div>
+							</a>
+
+						</div>
+
+						<span class="sizing"><span class="bold_string">Size</span>&nbsp;&nbsp;ONE SIZE</span>
+					</div>
+
+					<i class="fa fa-heart"></i>
+					<span class="normal_tag red_tag">HOT</span>
+
+				</div>
+
+			</div>
+
+			<div class="sellers_item4">
+
+				<div class="container_box">
+
+					<div class="image_container">
+						<a href=""><img id="product_image" src="https://askbootstrap.com/preview/osahan-mobile/images/all-products/small/1.jpg" alt=""></a>
+					</div>
+
+					<div class="footer_container_unclicked">
+						<h2 class="sellers_title">Lorem ipsum dolor.</h2>
+						<div class="product_price">
+							<span class="prev_price">$299.99&nbsp;</span>
+							<span class="actual_price">$229.99</span>
+						</div>
+						<span class="review">
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							(613)
+						</span>
+					</div>
+
+					<div class="footer_container_clicked">
+
+						<div class="icons_clicked">
+
+							<a href="" class="link_shopping_cart">
+								<i class="fa fa-shopping-cart"></i>
+								<div class="tool_cart_container">
+									<span class="tooltip_cart">Add To Cart</span>
+									<div class="squared_cart"></div>
+								</div>
+							</a>
+					
+							<a href="" class="link_search">
+								<i class="fa fa-search"></i>
+								<div class="tool_search_container">
+									<span class="tooltip_search">View Detail</span>
+									<div class="squared_search"></div>
+								</div>
+							</a>
+
+						</div>
+
+						<span class="sizing"><span class="bold_string">Size</span>&nbsp;&nbsp;ONE SIZE</span>
+					</div>
+
+					<i class="fa fa-heart"></i>
+					<span class="normal_tag red_tag">HOT</span>
+
+				</div>
+
+			</div>
+
+		</div>
 
 			<div class="previous feat_prev"><a href="">PREV</a></div>
 			<div class="next feat_next"><a href="">NEXT</a></div>
@@ -1354,6 +1660,18 @@
 				</a>
 			</div>
 
+			<div class="brand3">
+				<a href="">
+				<img src="https://askbootstrap.com/preview/osahan-mobile/images/brands/7.png" alt="" class="brand_image">
+				</a>
+			</div>
+
+			<div class="brand4">
+				<a href="">
+				<img src="https://askbootstrap.com/preview/osahan-mobile/images/brands/7.png" alt="" class="brand_image">
+				</a>
+			</div>
+
 		</div>
 
 	</div>
@@ -1479,32 +1797,59 @@
 			</div>
 		</div>
 
-	</div>
+	</footer>
 
-	<aside class="company_aside_nav clearfix">
-		<div class="aside_container_1">
-			<ul class="aside_ul">
-				<li><a href="">Home</a></li>
-				<li><a href="">About</a></li>
-				<li><a href="">Careers</a></li>
-				<li><a href="">Returns</a></li>
-				<li><a href="">Help</a></li>
-				<li><a href="">Team</a></li>
-				<li><a href="">Advertise With Us</a></li>
+	<footer class="company_nav_footer">
+
+		<aside class="company_aside_nav clearfix">
+
+			<div class="aside_container_3">
+
+				<img src="https://askbootstrap.com/preview/osahan-mobile/images/logo-white.png" alt="">
+
+			</div>
+
+			<div class="aside_container_1">
+				<ul class="aside_ul">
+					<li><a href="">Home</a></li>
+					<li><a href="">About</a></li>
+					<li><a href="">Careers</a></li>
+					<li><a href="">Returns</a></li>
+					<li><a href="">Help</a></li>
+					<li><a href="">Team</a></li>
+					<li><a href="">Advertise With Us</a></li>
+				</ul>
+				<span class="copyright">&copy; Copyright 2019 Osahan Mobile. | Made With <i class="fa fa-heart"></i> by <a class="bold_string">Ask Bootstrap</a></span>
+			</div>
+
+			<div class="aside_container_2">
+
+				<a href=""><i class="fa fa-facebook"></i></a>
+				<a href=""><i class="fa fa-twitter"></i></a>
+				<a href=""><i class="fa fa-linkedin"></i></a>
+				<a href=""><i class="fa fa-instagram"></i></a>
+
+			</div>
+
+		</aside>
+
+		<div class="payment_apps clearfix">
+
+			<div class="payment_methods">
+			
+				<img src="https://askbootstrap.com/preview/osahan-mobile/images/payment_methods.png" alt="">
+
+			</div>
+				
+			<ul class="download_app_footer clearfix">
+				<li>Download App</li>
+				<li> <a href=""><img src="https://askbootstrap.com/preview/osahan-mobile/images/app-store.png" alt=""></a> </li>
+				<li> <a href=""><img src="https://askbootstrap.com/preview/osahan-mobile/images/google-play.png" alt=""></a> </li>
 			</ul>
-			<span class="copyright">&copy; Copyright 2019 Osahan Mobile. | Made With <i class="fa fa-heart"></i> by <a class="bold_string">Ask Bootstrap</a></span>
-		</div>
-
-		<div class="aside_container_2">
-
-			<a href=""><i class="fa fa-facebook"></i></a>
-			<a href=""><i class="fa fa-twitter"></i></a>
-			<a href=""><i class="fa fa-linkedin"></i></a>
-			<a href=""><i class="fa fa-instagram"></i></a>
 
 		</div>
 
-	</aside><
+	</footer>
 
 	<script src="javascript/script.js"></script>
 
