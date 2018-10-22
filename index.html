@@ -29,131 +29,132 @@
 
 	<header>
 
-		<div class="logo_menu">
-			<a class="logo_link" href=""><img class="logo" src="https://askbootstrap.com/preview/osahan-mobile/images/logo-white.png" alt=""></a>
-			<i class="fa fa-navicon" onclick="showMenu()"></i>
+		<div class="header_container">
+			<div class="logo_menu">
+				<a class="logo_link" href=""><img class="logo" src="https://askbootstrap.com/preview/osahan-mobile/images/logo-white.png" alt=""></a>
+				<i class="fa fa-navicon" onclick="showMenu()"></i>
+			</div>
+
+			<form class="search_bar">
+				<select name="mobile_category" id="mobile_category">
+					<option value="all_categories" id="all_categories">All Categories</option>
+					<optgroup label="Android">
+						<option value="samsung">Samsung</option>
+						<option value="micromax">Micromax</option>
+						<option value="lenovo">Lenovo</option>
+						<option value="vivo">Vivo</option>
+					</optgroup>
+					<optgroup label="iOs">
+						<option value="apple">Apple</option>
+					</optgroup>
+				</select>
+				<input type="text" name="searchUser" placeholder="Search products & brands">
+				<button href=""><i  class="fa fa-search"></i>&nbsp;SEARCH</button>
+			</form>
+
+			<ul class="cart_account">
+
+				<li class="shopping_cart" onclick="cartDropdown()">
+					<i class="fa fa-shopping-cart"></i>&nbsp;CART&nbsp;<i class="fa fa-caret-down"></i>
+					<span class="counter">03</span>
+
+					<ul class="items_cart" id="cart_display" style="display: none;">
+
+						<li>
+							<a href="">
+								<img src="https://askbootstrap.com/preview/osahan-mobile/images/all-products/small/1.jpg" alt="">
+								<div>
+									<h3>Samsung Galaxy S8 </h3><i class="fa fa-trash-o"></i>
+									<span class="remove">Remove <i class="fa fa-caret-down"></i></span>
+									<p class="model_description">Color: red | Model: Grand S2 </p>
+									<p class="price"><span>$529.99</span>&nbsp;$379.99</p>
+								</div>
+							</a>
+						</li>
+
+						<li>
+							<a href="">
+								<img src="https://askbootstrap.com/preview/osahan-mobile/images/all-products/small/3.jpg" alt="">
+								<div>
+									<h3>Samsung Galaxy S8 </h3><i class="fa fa-trash-o"></i>
+									<span class="remove">Remove <i class="fa fa-caret-down"></i></span>
+									<p class="model_description">Color: red | Model: Grand S2 </p>
+									<p class="price"><span>$79.99</span>&nbsp;$49.99</p>
+								</div>
+							</a>
+						</li>
+
+						<li>
+							<a href="">
+								<img src="https://askbootstrap.com/preview/osahan-mobile/images/all-products/small/4.jpg" alt="">
+								<div>
+									<h3>Samsung Galaxy S8 </h3><i class="fa fa-trash-o"></i>
+									<span class="remove">Remove <i class="fa fa-caret-down"></i></span>
+									<p class="model_description">Color: red | Model: Grand S2 </p>
+									<p class="price"><span>$129.99</span>&nbsp;$99.99</p>
+								</div>
+							</a>
+						</li>
+
+						<li class="final_cart">
+							<h2>Subtotal: $210</h2>
+							<div>
+								<a href="" id="shop-cart"><i class="fa fa-shopping-cart"></i>&nbsp;VIEW CART</a>
+								<a href="" id="checkout">CHECKOUT</a>
+							</div>
+						</li>
+
+					</ul>
+
+				</li>
+
+				<li class="account" onclick="myAccount()">
+					<img src="https://askbootstrap.com/preview/osahan-mobile/images/user-ava.jpg" alt="">
+					<span>
+						<strong>HI</strong>&nbsp;OSAHAN&nbsp;<i class="fa fa-caret-down"></i>
+					</span>
+					
+					<ul class="account_menu" id="account_display" style="display: none;">
+
+						<li>
+							<a href=""><i class="fa fa-user"></i>&nbsp;&nbsp;&nbsp;My Profile</a>
+						</li>
+
+						<li>
+							<a href=""><i class="material-icons">place</i>&nbsp;&nbsp;&nbsp;My Address</a>
+						</li>
+
+						<li>
+							<a href=""><i class="fa fa-heart"></i>&nbsp;&nbsp;&nbsp;Wish List&nbsp;<span class="normal_tag" id="wish_tag">6</span></a>
+						</li>
+
+						<li>
+							<a href=""><i class="fa fa-list-alt"></i>&nbsp;&nbsp;&nbsp;Order List</a>
+						</li>
+
+						<li>
+							<a href=""><i class="fa fa-truck"></i>&nbsp;&nbsp;&nbsp;Order Status</a>
+						</li>
+
+						<li>
+							<a href=""><i class="fa fa-newspaper-o"></i>&nbsp;&nbsp;&nbsp;Invoice A4</a>
+						</li>
+
+						<li id="sign_out">
+							<a href=""><i class="fa fa-sign-out"></i>&nbsp;&nbsp;&nbsp;Logout</a>
+						</li>
+
+					</ul>
+
+				</li>
+
+			</ul>
+
 		</div>
-			
-<!-- THIS MUST BE RESOLVED WITH JAVASCRIPT-->
-
-		<form class="search_bar">
-			<select name="mobile_category" id="mobile_category">
-				<option value="all_categories" id="all_categories">All Categories<i class="fa fa-caret-down"></i></option>
-				<optgroup label="Android">
-					<option value="samsung">Samsung</option>
-					<option value="micromax">Micromax</option>
-					<option value="lenovo">Lenovo</option>
-					<option value="vivo">Vivo</option>
-				</optgroup>
-				<optgroup label="iOs">
-					<option value="apple">Apple</option>
-				</optgroup>
-			</select>
-			<input type="text" name="searchUser" placeholder="Search products & brands">
-			<button href=""><i  class="fa fa-search"></i>&nbsp;SEARCH</button>
-		</form>
-
-		<ul class="cart_account">
-
-			<li class="shopping_cart" onclick="cartDropdown()">
-				<i class="fa fa-shopping-cart"></i>&nbsp;CART&nbsp;<i class="fa fa-caret-down"></i>
-				<span class="counter">03</span>
-
-				<ul class="items_cart" id="cart_display" style="display: none;">
-
-					<li>
-						<a href="">
-							<img src="https://askbootstrap.com/preview/osahan-mobile/images/all-products/small/1.jpg" alt="">
-							<div>
-								<h3>Samsung Galaxy S8 </h3><i class="fa fa-trash-o"></i>
-								<span class="remove">Remove <i class="fa fa-caret-down"></i></span>
-								<p class="model_description">Color: red | Model: Grand S2 </p>
-								<p class="price"><span>$529.99</span>&nbsp;$379.99</p>
-							</div>
-						</a>
-					</li>
-
-					<li>
-						<a href="">
-							<img src="https://askbootstrap.com/preview/osahan-mobile/images/all-products/small/3.jpg" alt="">
-							<div>
-								<h3>Samsung Galaxy S8 </h3><i class="fa fa-trash-o"></i>
-								<span class="remove">Remove <i class="fa fa-caret-down"></i></span>
-								<p class="model_description">Color: red | Model: Grand S2 </p>
-								<p class="price"><span>$79.99</span>&nbsp;$49.99</p>
-							</div>
-						</a>
-					</li>
-
-					<li>
-						<a href="">
-							<img src="https://askbootstrap.com/preview/osahan-mobile/images/all-products/small/4.jpg" alt="">
-							<div>
-								<h3>Samsung Galaxy S8 </h3><i class="fa fa-trash-o"></i>
-								<span class="remove">Remove <i class="fa fa-caret-down"></i></span>
-								<p class="model_description">Color: red | Model: Grand S2 </p>
-								<p class="price"><span>$129.99</span>&nbsp;$99.99</p>
-							</div>
-						</a>
-					</li>
-
-					<li class="final_cart">
-						<h2>Subtotal: $210</h2>
-						<div>
-							<a href="" id="shop-cart"><i class="fa fa-shopping-cart"></i>&nbsp;VIEW CART</a>
-							<a href="" id="checkout">CHECKOUT</a>
-						</div>
-					</li>
-
-				</ul>
-
-			</li>
-
-			<li class="account" onclick="myAccount()">
-				<img src="https://askbootstrap.com/preview/osahan-mobile/images/user-ava.jpg" alt="">
-				<span>
-					<strong>HI</strong>&nbsp;OSAHAN&nbsp;<i class="fa fa-caret-down"></i>
-				</span>
-				
-				<ul class="account_menu" id="account_display" style="display: none;">
-
-					<li>
-						<a href=""><i class="fa fa-user"></i>&nbsp;&nbsp;&nbsp;My Profile</a>
-					</li>
-
-					<li>
-						<a href=""><i class="material-icons">place</i>&nbsp;&nbsp;&nbsp;My Address</a>
-					</li>
-
-					<li>
-						<a href=""><i class="fa fa-heart"></i>&nbsp;&nbsp;&nbsp;Wish List&nbsp;<span class="normal_tag" id="wish_tag">6</span></a>
-					</li>
-
-					<li>
-						<a href=""><i class="fa fa-list-alt"></i>&nbsp;&nbsp;&nbsp;Order List</a>
-					</li>
-
-					<li>
-						<a href=""><i class="fa fa-truck"></i>&nbsp;&nbsp;&nbsp;Order Status</a>
-					</li>
-
-					<li>
-						<a href=""><i class="fa fa-newspaper-o"></i>&nbsp;&nbsp;&nbsp;Invoice A4</a>
-					</li>
-
-					<li id="sign_out">
-						<a href=""><i class="fa fa-sign-out"></i>&nbsp;&nbsp;&nbsp;Logout</a>
-					</li>
-
-				</ul>
-
-			</li>
-
-		</ul>
 
 	</header>
 
-	<nav>
+	<nav class="menu_container">
 		
 		<ul class="main_menu" id="showMenu" style="display: none;">
 
@@ -518,13 +519,17 @@
 
 	</nav>
 
-	<div class="banner_carousel">
-		
-		<a href="">
-		<img src="https://askbootstrap.com/preview/osahan-mobile/images/slider/slider1.jpg" alt="">
-		</a>
-		<div class="previous"><a href="">PREV</a></div>
-		<div class="next"><a href="">NEXT</a></div>
+	<div class="banner_carousel_container">
+
+		<div class="banner_carousel">
+			
+			<a href="">
+			<img src="https://askbootstrap.com/preview/osahan-mobile/images/slider/slider1.jpg" alt="">
+			</a>
+			<div class="previous"><a href="">PREV</a></div>
+			<div class="next"><a href="">NEXT</a></div>
+
+		</div>
 
 	</div>
 
@@ -717,6 +722,64 @@
 			</div>
 
 			<div class="featured_item4">
+
+				<div class="container_box">
+
+					<div class="image_container">
+						<a href="">
+						<img id="product_image" src="https://askbootstrap.com/preview/osahan-mobile/images/all-products/small/1.jpg" alt="">
+						</a>
+					</div>
+
+					<div class="footer_container_unclicked">
+						<h2 class="featured_title">Lorem ipsum dolor.</h2>
+						<div class="product_price">
+							<span class="prev_price">$299.99&nbsp;</span>
+							<span class="actual_price">$229.99</span>
+						</div>
+						<span class="review">
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							(613)
+						</span>
+					</div>
+
+					<div class="footer_container_clicked">
+
+						<div class="icons_clicked">
+
+							<a href="" class="link_shopping_cart">
+								<i class="fa fa-shopping-cart"></i>
+								<div class="tool_cart_container">
+									<span class="tooltip_cart">Add To Cart</span>
+									<div class="squared_cart"></div>
+								</div>
+							</a>
+					
+							<a href="" class="link_search">
+								<i class="fa fa-search"></i>
+								<div class="tool_search_container">
+									<span class="tooltip_search">View Detail</span>
+									<div class="squared_search"></div>
+								</div>
+							</a>
+					
+						</div>
+
+						<span class="sizing"><span class="bold_string">Size</span>&nbsp;&nbsp;ONE SIZE</span>
+					</div>
+
+					<i class="fa fa-heart"></i>
+					<span class="normal_tag red_tag">HOT</span>
+
+				</div>
+
+			</div>
+
+			<div class="featured_item5">
 
 				<div class="container_box">
 
@@ -1133,6 +1196,62 @@
 
 			</div>
 
+			<div class="onsale_item5">
+
+				<div class="container_box">
+
+					<div class="image_container">
+						<a href=""><img id="product_image" src="https://askbootstrap.com/preview/osahan-mobile/images/all-products/small/1.jpg" alt=""></a>
+					</div>
+
+					<div class="footer_container_unclicked">
+						<h2 class="onsale_title">Lorem ipsum dolor.</h2>
+						<div class="product_price">
+							<span class="prev_price">$299.99&nbsp;</span>
+							<span class="actual_price">$229.99</span>
+						</div>
+						<span class="review">
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							(613)
+						</span>
+					</div>
+
+					<div class="footer_container_clicked">
+
+						<div class="icons_clicked">
+
+							<a href="" class="link_shopping_cart">
+								<i class="fa fa-shopping-cart"></i>
+								<div class="tool_cart_container">
+									<span class="tooltip_cart">Add To Cart</span>
+									<div class="squared_cart"></div>
+								</div>
+							</a>
+					
+							<a href="" class="link_search">
+								<i class="fa fa-search"></i>
+								<div class="tool_search_container">
+									<span class="tooltip_search">View Detail</span>
+									<div class="squared_search"></div>
+								</div>
+							</a>
+
+						</div>
+
+						<span class="sizing"><span class="bold_string">Size</span>&nbsp;&nbsp;ONE SIZE</span>
+					</div>
+
+					<i class="fa fa-heart"></i>
+					<span class="normal_tag red_tag">HOT</span>
+
+				</div>
+
+			</div>
+
 			<div class="previous feat_prev"><a href="">PREV</a></div>
 			<div class="next feat_next"><a href="">NEXT</a></div>
 
@@ -1140,9 +1259,13 @@
 
 	</div>
 
-	<div class="banner_main_first">
-		<a href=""><div class="banner_container"><img src="https://askbootstrap.com/preview/osahan-mobile/images/offers/home2_banner_2.jpg" alt="" class="banner"></div></a>
-		<a href=""><div class="banner_container"><img src="https://askbootstrap.com/preview/osahan-mobile/images/offers/home2_banner_3.jpg" alt="" class="banner"></div></a>
+	<div class="banner_main_first_container">
+
+		<div class="banner_main_first">
+			<a href=""><div class="banner_container"><img src="https://askbootstrap.com/preview/osahan-mobile/images/offers/home2_banner_2.jpg" alt="" class="banner"></div></a>
+			<a href=""><div class="banner_container"><img src="https://askbootstrap.com/preview/osahan-mobile/images/offers/home2_banner_3.jpg" alt="" class="banner"></div></a>
+		</div>
+
 	</div>
 
 	<div class="sellers_section">
@@ -1379,6 +1502,66 @@
 				</div>
 
 			</div>
+
+
+			<div class="sellers_item5">
+
+				<div class="container_box">
+
+					<div class="image_container">
+						<a href=""><img id="product_image" src="https://askbootstrap.com/preview/osahan-mobile/images/all-products/small/1.jpg" alt=""></a>
+					</div>
+
+					<div class="footer_container_unclicked">
+						<h2 class="sellers_title">Lorem ipsum dolor.</h2>
+						<div class="product_price">
+							<span class="prev_price">$299.99&nbsp;</span>
+							<span class="actual_price">$229.99</span>
+						</div>
+						<span class="review">
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							(613)
+						</span>
+					</div>
+
+					<div class="footer_container_clicked">
+
+						<div class="icons_clicked">
+
+							<a href="" class="link_shopping_cart">
+								<i class="fa fa-shopping-cart"></i>
+								<div class="tool_cart_container">
+									<span class="tooltip_cart">Add To Cart</span>
+									<div class="squared_cart"></div>
+								</div>
+							</a>
+					
+							<a href="" class="link_search">
+								<i class="fa fa-search"></i>
+								<div class="tool_search_container">
+									<span class="tooltip_search">View Detail</span>
+									<div class="squared_search"></div>
+								</div>
+							</a>
+
+						</div>
+
+						<span class="sizing"><span class="bold_string">Size</span>&nbsp;&nbsp;ONE SIZE</span>
+					</div>
+
+					<i class="fa fa-heart"></i>
+					<span class="normal_tag red_tag">HOT</span>
+
+				</div>
+
+			</div>
+
+		</div>
+
 
 		</div>
 
@@ -1634,130 +1817,174 @@
 
 	</div>
 
-	<div class="top_brands_section">
+	<div class="top_brands_container">
 
-		<div class="previous feat_prev"><a href="">PREV</a></div>
-		<div class="next feat_next"><a href="">NEXT</a></div>
+		<div class="top_brands_section">
 
-		<div class="brands_header">
+			<div class="previous feat_prev"><a href="">PREV</a></div>
+			<div class="next feat_next"><a href="">NEXT</a></div>
 
-			<h1>TOP BRANDS &nbsp;<span class="normal_tag purple_tag" id="brands_icon">200 BRANDS</span></h1>
-			<div class="border_decorative" id="featured_pos"></div>
+			<div class="brands_header">
 
-		</div>
+				<h1>TOP BRANDS &nbsp;<span class="normal_tag purple_tag" id="brands_icon">200 BRANDS</span></h1>
+				<div class="border_decorative" id="featured_pos"></div>
 
-		<div class="brands_container">
-
-			<div class="brand1">
-				<a href="">
-				<img src="https://askbootstrap.com/preview/osahan-mobile/images/brands/7.png" alt="" class="brand_image">
-				</a>
 			</div>
 
-			<div class="brand2">
-				<a href="">
-				<img src="https://askbootstrap.com/preview/osahan-mobile/images/brands/7.png" alt="" class="brand_image">
-				</a>
-			</div>
+			<div class="brands_container">
 
-			<div class="brand3">
-				<a href="">
-				<img src="https://askbootstrap.com/preview/osahan-mobile/images/brands/7.png" alt="" class="brand_image">
-				</a>
-			</div>
+				<div class="brand1">
+					<a href="">
+					<img src="https://askbootstrap.com/preview/osahan-mobile/images/brands/7.png" alt="" class="brand_image">
+					</a>
+				</div>
 
-			<div class="brand4">
-				<a href="">
-				<img src="https://askbootstrap.com/preview/osahan-mobile/images/brands/7.png" alt="" class="brand_image">
-				</a>
+				<div class="brand2">
+					<a href="">
+					<img src="https://askbootstrap.com/preview/osahan-mobile/images/brands/7.png" alt="" class="brand_image">
+					</a>
+				</div>
+
+				<div class="brand3">
+					<a href="">
+					<img src="https://askbootstrap.com/preview/osahan-mobile/images/brands/7.png" alt="" class="brand_image">
+					</a>
+				</div>
+
+				<div class="brand4">
+					<a href="">
+					<img src="https://askbootstrap.com/preview/osahan-mobile/images/brands/7.png" alt="" class="brand_image">
+					</a>
+				</div>
+
+				<div class="brand5">
+					<a href="">
+					<img src="https://askbootstrap.com/preview/osahan-mobile/images/brands/7.png" alt="" class="brand_image">
+					</a>
+				</div>
+
+				<div class="brand6">
+					<a href="">
+					<img src="https://askbootstrap.com/preview/osahan-mobile/images/brands/7.png" alt="" class="brand_image">
+					</a>
+				</div>
+
+				<div class="brand7">
+					<a href="">
+					<img src="https://askbootstrap.com/preview/osahan-mobile/images/brands/7.png" alt="" class="brand_image">
+					</a>
+				</div>
+
+				<div class="brand8">
+					<a href="">
+					<img src="https://askbootstrap.com/preview/osahan-mobile/images/brands/7.png" alt="" class="brand_image">
+					</a>
+				</div>
+
+				<div class="brand9">
+					<a href="">
+					<img src="https://askbootstrap.com/preview/osahan-mobile/images/brands/7.png" alt="" class="brand_image">
+					</a>
+				</div>
+
+				<div class="brand10">
+					<a href="">
+					<img src="https://askbootstrap.com/preview/osahan-mobile/images/brands/7.png" alt="" class="brand_image">
+					</a>
+				</div>
+
 			</div>
 
 		</div>
 
 	</div>
 
-	<footer class="main_footer">
+	<footer class="main_footer_container">
 
-		<div class="about_footer_section">
+		<div class="main_footer">
 
-			<div class="about_header">
-				<h1>ABOUT</h1>
-				<div class="border_decorative" id="featured_pos"></div>
+			<div class="about_footer_section">
+
+				<div class="about_header">
+					<h1>ABOUT</h1>
+					<div class="border_decorative" id="featured_pos"></div>
+				</div>
+
+				<p class="about_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis sit earum facilis eveniet quos pariatur, est laboriosam excepturi atque perspiciatis veritatis sed similique. Magnam molestias voluptatem error, similique aliquid, ratione repellendus doloribus id expedita quos dolorem dicta quo ad et enim libero. Laboriosam necessitatibus sed est non modi quas suscipit.</p>
+
 			</div>
 
-			<p class="about_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis sit earum facilis eveniet quos pariatur, est laboriosam excepturi atque perspiciatis veritatis sed similique. Magnam molestias voluptatem error, similique aliquid, ratione repellendus doloribus id expedita quos dolorem dicta quo ad et enim libero. Laboriosam necessitatibus sed est non modi quas suscipit.</p>
+			<div class="phones_footer_section">
 
-		</div>
+				<div class="phones_header">
+					<h1>SMART PHONES BRANDS</h1>
+					<div class="border_decorative" id="featured_pos"></div>
+				</div>
 
-		<div class="phones_footer_section">
+				<ul class="phones_brands">
+					<li> <a href=""><icon class="fa fa-angle-right"></icon> <span>562&nbsp;</span>Mobile</a></li>
+					<li> <a href=""><icon class="fa fa-angle-right"></icon> <span>451&nbsp;</span>Tab</a></li>
+					<li> <a href=""><icon class="fa fa-angle-right"></icon> <span>352&nbsp;</span>Watch</a></li>
+					<li> <a href=""><icon class="fa fa-angle-right"></icon> <span>312&nbsp;</span>Head Phone</a></li>
+					<li> <a href=""><icon class="fa fa-angle-right"></icon> <span>262&nbsp;</span>Memory</a></li>
+					<li> <a href=""><icon class="fa fa-angle-right"></icon> <span>152&nbsp;</span>Accessories</a></li>
+					<li> <a href=""><icon class="fa fa-angle-right"></icon> <span>262&nbsp;</span>Head Phone</a></li>
+					<li> <a href=""><icon class="fa fa-angle-right"></icon> <span>152&nbsp;</span>Memory</a></li>
+					<li> <a href=""><icon class="fa fa-angle-right"></icon> <span>562&nbsp;</span>Accessories</a></li>
+					<li> <a href=""><icon class="fa fa-angle-right"></icon> <span>312&nbsp;</span>Mobile</a></li>
+					<li> <a href=""><icon class="fa fa-angle-right"></icon> <span>451&nbsp;</span>Tab</a></li>
+					<li> <a href=""><icon class="fa fa-angle-right"></icon> <span>352&nbsp;</span>Watch</a></li>
+				</ul>
 
-			<div class="phones_header">
-				<h1>SMART PHONES BRANDS</h1>
-				<div class="border_decorative" id="featured_pos"></div>
 			</div>
 
-			<ul class="phones_brands">
-				<li> <a href=""><icon class="fa fa-angle-right"></icon> <span>562&nbsp;</span>Mobile</a></li>
-				<li> <a href=""><icon class="fa fa-angle-right"></icon> <span>451&nbsp;</span>Tab</a></li>
-				<li> <a href=""><icon class="fa fa-angle-right"></icon> <span>352&nbsp;</span>Watch</a></li>
-				<li> <a href=""><icon class="fa fa-angle-right"></icon> <span>312&nbsp;</span>Head Phone</a></li>
-				<li> <a href=""><icon class="fa fa-angle-right"></icon> <span>262&nbsp;</span>Memory</a></li>
-				<li> <a href=""><icon class="fa fa-angle-right"></icon> <span>152&nbsp;</span>Accessories</a></li>
-				<li> <a href=""><icon class="fa fa-angle-right"></icon> <span>262&nbsp;</span>Head Phone</a></li>
-				<li> <a href=""><icon class="fa fa-angle-right"></icon> <span>152&nbsp;</span>Memory</a></li>
-				<li> <a href=""><icon class="fa fa-angle-right"></icon> <span>562&nbsp;</span>Accessories</a></li>
-				<li> <a href=""><icon class="fa fa-angle-right"></icon> <span>312&nbsp;</span>Mobile</a></li>
-				<li> <a href=""><icon class="fa fa-angle-right"></icon> <span>451&nbsp;</span>Tab</a></li>
-				<li> <a href=""><icon class="fa fa-angle-right"></icon> <span>352&nbsp;</span>Watch</a></li>
-			</ul>
+			<div class="android_footer_section">
 
-		</div>
+				<div class="android_header">
+					<h1>ANDROID MOBILES BRANDS</h1>
+					<div class="border_decorative" id="featured_pos"></div>
+				</div>
 
-		<div class="android_footer_section">
+				<ul class="android_brands">
+					<li> <a href=""><icon class="fa fa-angle-right"></icon> <span>562&nbsp;</span>Mobile</a></li>
+					<li> <a href=""><icon class="fa fa-angle-right"></icon> <span>451&nbsp;</span>Tab</a></li>
+					<li> <a href=""><icon class="fa fa-angle-right"></icon> <span>352&nbsp;</span>Watch</a></li>
+					<li> <a href=""><icon class="fa fa-angle-right"></icon> <span>312&nbsp;</span>Head Phone</a></li>
+					<li> <a href=""><icon class="fa fa-angle-right"></icon> <span>262&nbsp;</span>Memory&nbsp;<span class="normal_tag red_tag">NEW</span></a></li>
+					<li> <a href=""><icon class="fa fa-angle-right"></icon> <span>152&nbsp;</span>Accessories</a></li>
+					<li> <a href=""><icon class="fa fa-angle-right"></icon> <span>262&nbsp;</span>Head Phone</a></li>
+					<li> <a href=""><icon class="fa fa-angle-right"></icon> <span>152&nbsp;</span>Memory</a></li>
+					<li> <a href=""><icon class="fa fa-angle-right"></icon> <span>562&nbsp;</span>Accessories</a></li>
+					<li> <a href=""><icon class="fa fa-angle-right"></icon> <span>312&nbsp;</span>Mobile</a></li>
+					<li> <a href=""><icon class="fa fa-angle-right"></icon> <span>451&nbsp;</span>Tab</a></li>
+					<li> <a href=""><icon class="fa fa-angle-right"></icon> <span>352&nbsp;</span>Watch</a></li>
+				</ul>
 
-			<div class="android_header">
-				<h1>ANDROID MOBILES BRANDS</h1>
-				<div class="border_decorative" id="featured_pos"></div>
 			</div>
 
-			<ul class="android_brands">
-				<li> <a href=""><icon class="fa fa-angle-right"></icon> <span>562&nbsp;</span>Mobile</a></li>
-				<li> <a href=""><icon class="fa fa-angle-right"></icon> <span>451&nbsp;</span>Tab</a></li>
-				<li> <a href=""><icon class="fa fa-angle-right"></icon> <span>352&nbsp;</span>Watch</a></li>
-				<li> <a href=""><icon class="fa fa-angle-right"></icon> <span>312&nbsp;</span>Head Phone</a></li>
-				<li> <a href=""><icon class="fa fa-angle-right"></icon> <span>262&nbsp;</span>Memory&nbsp;<span class="normal_tag red_tag">NEW</span></a></li>
-				<li> <a href=""><icon class="fa fa-angle-right"></icon> <span>152&nbsp;</span>Accessories</a></li>
-				<li> <a href=""><icon class="fa fa-angle-right"></icon> <span>262&nbsp;</span>Head Phone</a></li>
-				<li> <a href=""><icon class="fa fa-angle-right"></icon> <span>152&nbsp;</span>Memory</a></li>
-				<li> <a href=""><icon class="fa fa-angle-right"></icon> <span>562&nbsp;</span>Accessories</a></li>
-				<li> <a href=""><icon class="fa fa-angle-right"></icon> <span>312&nbsp;</span>Mobile</a></li>
-				<li> <a href=""><icon class="fa fa-angle-right"></icon> <span>451&nbsp;</span>Tab</a></li>
-				<li> <a href=""><icon class="fa fa-angle-right"></icon> <span>352&nbsp;</span>Watch</a></li>
-			</ul>
+			<div class="windows_footer_section">
 
-		</div>
+				<div class="windows_header">
+					<h1>WINDOWS MOBILES BRANDS</h1>
+					<div class="border_decorative" id="featured_pos"></div>
+				</div>
 
-		<div class="windows_footer_section">
+				<ul class="windows_brands">
+					<li> <a href=""><icon class="fa fa-angle-right"></icon> <span>562&nbsp;</span>Mobile</a></li>
+					<li> <a href=""><icon class="fa fa-angle-right"></icon> <span>451&nbsp;</span>Tab</a></li>
+					<li> <a href=""><icon class="fa fa-angle-right"></icon> <span>352&nbsp;</span>Watch</a></li>
+					<li> <a href=""><icon class="fa fa-angle-right"></icon> <span>312&nbsp;</span>Head Phone</a></li>
+					<li> <a href=""><icon class="fa fa-angle-right"></icon> <span>262&nbsp;</span>Memory</a></li>
+					<li> <a href=""><icon class="fa fa-angle-right"></icon> <span>152&nbsp;</span>Accessories</a></li>
+					<li> <a href=""><icon class="fa fa-angle-right"></icon> <span>262&nbsp;</span>Head Phone</a></li>
+					<li> <a href=""><icon class="fa fa-angle-right"></icon> <span>152&nbsp;</span>Memory</a></li>
+					<li> <a href=""><icon class="fa fa-angle-right"></icon> <span>562&nbsp;</span>Watch&nbsp;<span class="normal_tag yellow_tag">NEW</span></a></li>
+					<li> <a href=""><icon class="fa fa-angle-right"></icon> <span>312&nbsp;</span>Mobile</a></li>
+					<li> <a href=""><icon class="fa fa-angle-right"></icon> <span>451&nbsp;</span>Tab</a></li>
+					<li> <a href=""><icon class="fa fa-angle-right"></icon> <span>352&nbsp;</span>Watch</a></li>
+				</ul>
 
-			<div class="windows_header">
-				<h1>WINDOWS MOBILES BRANDS</h1>
-				<div class="border_decorative" id="featured_pos"></div>
 			</div>
-
-			<ul class="windows_brands">
-				<li> <a href=""><icon class="fa fa-angle-right"></icon> <span>562&nbsp;</span>Mobile</a></li>
-				<li> <a href=""><icon class="fa fa-angle-right"></icon> <span>451&nbsp;</span>Tab</a></li>
-				<li> <a href=""><icon class="fa fa-angle-right"></icon> <span>352&nbsp;</span>Watch</a></li>
-				<li> <a href=""><icon class="fa fa-angle-right"></icon> <span>312&nbsp;</span>Head Phone</a></li>
-				<li> <a href=""><icon class="fa fa-angle-right"></icon> <span>262&nbsp;</span>Memory</a></li>
-				<li> <a href=""><icon class="fa fa-angle-right"></icon> <span>152&nbsp;</span>Accessories</a></li>
-				<li> <a href=""><icon class="fa fa-angle-right"></icon> <span>262&nbsp;</span>Head Phone</a></li>
-				<li> <a href=""><icon class="fa fa-angle-right"></icon> <span>152&nbsp;</span>Memory</a></li>
-				<li> <a href=""><icon class="fa fa-angle-right"></icon> <span>562&nbsp;</span>Watch&nbsp;<span class="normal_tag yellow_tag">NEW</span></a></li>
-				<li> <a href=""><icon class="fa fa-angle-right"></icon> <span>312&nbsp;</span>Mobile</a></li>
-				<li> <a href=""><icon class="fa fa-angle-right"></icon> <span>451&nbsp;</span>Tab</a></li>
-				<li> <a href=""><icon class="fa fa-angle-right"></icon> <span>352&nbsp;</span>Watch</a></li>
-			</ul>
 
 		</div>
 
@@ -1768,7 +1995,7 @@
 		<div class="service_container clearfix">
 			<i class="fa fa-truck"></i>
 			<div class="shipping_policy">
-				<h3>FREE SHIPPING & RETURN</h3>
+				<h3>SHIPPING & RETURN</h3>
 				<p>Free Shipping Over $300</p>
 			</div>
 		</div>
@@ -1776,7 +2003,7 @@
 		<div class="service_container clearfix">
 				<i class="fa fa-dollar"></i>
 			<div class="guarantee_policy">
-				<h3>MONEY BACK GUARANTEE</h3>
+				<h3>MONEY GUARANTEE</h3>
 				<p>30 Days Money Back</p>
 			</div>
 		</div>
@@ -1801,33 +2028,37 @@
 
 	<footer class="company_nav_footer">
 
-		<aside class="company_aside_nav clearfix">
+		<aside class="company_aside_nav_container">
 
-			<div class="aside_container_3">
+			<div class="company_aside_nav clearfix">
 
-				<img src="https://askbootstrap.com/preview/osahan-mobile/images/logo-white.png" alt="">
+				<div class="aside_container_3">
 
-			</div>
+					<img src="https://askbootstrap.com/preview/osahan-mobile/images/logo-white.png" alt="">
 
-			<div class="aside_container_1">
-				<ul class="aside_ul">
-					<li><a href="">Home</a></li>
-					<li><a href="">About</a></li>
-					<li><a href="">Careers</a></li>
-					<li><a href="">Returns</a></li>
-					<li><a href="">Help</a></li>
-					<li><a href="">Team</a></li>
-					<li><a href="">Advertise With Us</a></li>
-				</ul>
-				<span class="copyright">&copy; Copyright 2019 Osahan Mobile. | Made With <i class="fa fa-heart"></i> by <a class="bold_string">Ask Bootstrap</a></span>
-			</div>
+				</div>
 
-			<div class="aside_container_2">
+				<div class="aside_container_1">
+					<ul class="aside_ul">
+						<li><a href="">Home</a></li>
+						<li><a href="">About</a></li>
+						<li><a href="">Careers</a></li>
+						<li><a href="">Returns</a></li>
+						<li><a href="">Help</a></li>
+						<li><a href="">Team</a></li>
+						<li><a href="">Advertise With Us</a></li>
+					</ul>
+					<span class="copyright">&copy; Copyright 2019 Osahan Mobile. | Made With <i class="fa fa-heart"></i> by <a class="bold_string">Ask Bootstrap</a></span>
+				</div>
 
-				<a href=""><i class="fa fa-facebook"></i></a>
-				<a href=""><i class="fa fa-twitter"></i></a>
-				<a href=""><i class="fa fa-linkedin"></i></a>
-				<a href=""><i class="fa fa-instagram"></i></a>
+				<div class="aside_container_2">
+
+					<a href=""><i class="fa fa-facebook"></i></a>
+					<a href=""><i class="fa fa-twitter"></i></a>
+					<a href=""><i class="fa fa-linkedin"></i></a>
+					<a href=""><i class="fa fa-instagram"></i></a>
+
+				</div>
 
 			</div>
 

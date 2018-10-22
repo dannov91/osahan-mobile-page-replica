@@ -1,7 +1,17 @@
+Single web page sample for e-commerce shop.
+
+Features:
+
+* Built with Mobile First Approach.
+* Media breakpoints for layout @: 480px, 576px, 769px, 980px, 993px, 1200px.
+* Submenus displayed when clicking on menu items (PRODUCTS, BRANDS... ETC.)
+* Cart & Account information displayed when tabs get clicked.
+* Hovering over an item will scale up image and display additional info.
+
+@@@@@ IMPORTANT NOTE @@@@@
+
 This page is a replica from the following template:
 
 https://askbootstrap.com/preview/osahan-mobile/
 
-I have no intention other than using this page as a demonstration of my skills as a web developer. Any inquiry please refer to the link above.
-
-This web page in particular is the one I'm working on at the moment. It starts from the mobile first approach, so by now it will look fine in mobile devices.
+I have no intention other than using this page as a demonstration of my skills as a web developer. If you wish to use this template refer to the authors.
