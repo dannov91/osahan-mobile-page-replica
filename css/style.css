@@ -897,7 +897,6 @@ header {
 
 [class*="section"] [class*="item"] .container_box a { 
 
-	display: block;
 	height: 280px;
 	display: flex;
 	align-items: center;
@@ -1071,9 +1070,10 @@ header {
 }
 
 [class*="item"] .link_shopping_cart,
-[class*="item"] .link_search {
+[class*="item"] .link_search { 
 
 	position: relative;
+	height: auto !important;
 
 }
 
